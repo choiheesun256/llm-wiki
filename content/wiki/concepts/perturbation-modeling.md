@@ -10,17 +10,17 @@ updated: 2026-04-27
 
 # Perturbation Modeling
 
-Track methods that predict or explain cellular response to perturbations.
+세포가 perturbation에 어떻게 반응하는지를 예측하거나 설명하는 방법론들을 정리한다.
 
-## Main design patterns
+## 주요 설계 패턴
 
-- latent translation of control to perturbed cells
-- additive composition of perturbation embeddings
-- transport between control and perturbed distributions
-- explicit cell-state dynamics with perturbation conditioning
-- interpretable sparse perturbation effects with uncertainty
+- control 세포를 perturbed 세포로 변환하는 latent translation
+- perturbation embedding의 덧셈적 합성 (additive composition)
+- control 분포와 perturbed 분포 사이의 transport
+- perturbation conditioning을 통한 명시적 세포 상태 dynamics 모델링
+- 불확실성을 포함한 해석 가능한 sparse perturbation 효과 추정
 
-## Representative methods
+## 대표적 방법론
 
 - [[scGen]]
 - [[CPA]]
@@ -29,17 +29,17 @@ Track methods that predict or explain cellular response to perturbations.
 - [[GPerturb]]
 - [[annForce]]
 
-## Current shift in the literature
+## 최근 연구 동향
 
-The field has moved from simple in-distribution prediction toward:
+이 분야는 단순한 분포 내(in-distribution) 예측을 넘어 다음으로 이동하고 있다:
 
-- unseen cell types
-- unseen perturbations
-- unseen combinations
-- heterogeneous response distributions
-- fate-aware or trajectory-aware evaluation
+- 학습에 없던 세포 유형 (unseen cell types)
+- 학습에 없던 perturbation (unseen perturbations)
+- 학습에 없던 조합 (unseen combinations)
+- 이질적인 반응 분포 (heterogeneous response distributions)
+- fate 또는 trajectory를 고려한 평가 방식
 
-## Related pages
+## 관련 페이지
 
 - [[single-cell-perturbation-prediction]]
 - [[annForce-related-methods]]

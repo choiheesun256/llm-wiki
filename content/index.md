@@ -1,39 +1,74 @@
 ---
-title: Heesun Research Garden
-description: A local research wiki built from clipped papers, source summaries, concept notes, and comparison pages.
+title: Heesun LLM wiki
 ---
 
-# Heesun Research Garden
+<div class="stats-row">
+  <div class="stat">
+    <div class="stat-num">1</div>
+    <div class="stat-label">프로젝트</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">7</div>
+    <div class="stat-label">논문</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">6</div>
+    <div class="stat-label">개념</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">2</div>
+    <div class="stat-label">비교</div>
+  </div>
+</div>
 
-This vault is a small research garden for turning source material into durable notes.
+<div class="card-grid">
 
-## Current hubs
+<div class="card">
+<span class="card-badge">프로젝트</span>
 
-- [[overview]]: top-level map of the vault
-- [[annForce]]: project hub for annForce-related literature
-- [[annForce literature scan]]: curated 30-paper IF5+ scan
+### [[annForce]]
 
-## Source notes
+Perturbation을 additive force field로 표현하는 single-cell 모델
 
-- [[GPerturb]]
-- [[scGen]]
-- [[CPA]]
-- [[CellOT]]
-- [[GEARS]]
-- [[CellRank]]
+- [[annForce literature scan|논문 스캔]] — IF5+ 30편 정리
+- [[annForce-related-methods|방법론 비교]]
+- [[what papers are related to annForce|관련 논문 Q&A]]
 
-## Concepts
+</div>
 
-- [[perturbation-modeling]]
-- [[single-cell-methods]]
-- [[single-cell-perturbation-prediction]]
-- [[cell-state-dynamics-and-fate-mapping]]
+<div class="card">
+<span class="card-badge">논문</span>
 
-## Comparisons
+### 소스 노트
 
-- [[method-comparison-matrix]]
-- [[annForce-related-methods]]
+- [[scGen]] · [[CPA]] · [[CellOT]]
+- [[GEARS]] · [[CellRank]] · [[GPerturb]]
+- [[InterPLM]]
 
-## Durable questions
+</div>
 
-- [[what papers are related to annForce]]
+<div class="card">
+<span class="card-badge">개념</span>
+
+### 주요 개념
+
+- [[perturbation-modeling|Perturbation modeling]]
+- [[single-cell-perturbation-prediction|Perturbation prediction]]
+- [[cell-state-dynamics-and-fate-mapping|Cell state dynamics & fate mapping]]
+- [[single-cell-methods|Single-cell methods]]
+- [[protein-language-models|Protein language models]]
+- [[sparse-autoencoders|Sparse autoencoders]]
+
+</div>
+
+<div class="card">
+<span class="card-badge">비교</span>
+
+### 방법론 비교
+
+- [[method-comparison-matrix|전체 비교표]]
+- [[annForce-related-methods|annForce 관련 방법론]]
+
+</div>
+
+</div>

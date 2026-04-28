@@ -2,10 +2,7 @@
 title: Overview
 type: overview
 status: active
-source_files:
-  - Clippings/GPerturb Gaussian process modelling of single-cell perturbation data - Nature Communications.md
-  - Clippings/annForce related literature scan - IF5+ papers.md
-  - Clippings/InterPLM discovering interpretable features in protein language models via sparse autoencoders - Nature Methods.md
+draft: true
 updated: 2026-04-27
 ---
 

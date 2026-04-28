@@ -7,18 +7,18 @@ source_files:
 updated: 2026-04-27
 ---
 
-# What Papers Are Related to annForce?
+# annForce와 관련된 논문은 무엇인가?
 
-## Short answer
+## 짧은 답변
 
-The most relevant papers are the ones that combine:
+가장 관련성 높은 논문은 다음 요소들을 결합한 연구들이다:
 
-- single-cell perturbation prediction
-- compositional or additive perturbation effects
-- transport or continuous dynamics
-- fate-aware evaluation on Perturb-seq or lineage-tracing benchmarks
+- single-cell perturbation 예측
+- compositional 또는 additive perturbation effect
+- transport 또는 연속 dynamics
+- Perturb-seq 또는 lineage-tracing 벤치마크에서의 fate-aware 평가
 
-## Start here
+## 여기서 시작하기
 
 - [[CPA]]
 - [[GEARS]]
@@ -27,20 +27,20 @@ The most relevant papers are the ones that combine:
 - [[scGen]]
 - [[GPerturb]]
 
-## If the question is specifically about benchmarks
+## 벤치마크에 관한 질문이라면
 
-- read `Benchmarking algorithms for generalizable single-cell perturbation response prediction`
-- use Perturb-seq, genome-scale Perturb-seq, compressed Perturb-seq, and LARRY as the most relevant data anchors
+- `Benchmarking algorithms for generalizable single-cell perturbation response prediction`을 읽는다
+- Perturb-seq, genome-scale Perturb-seq, compressed Perturb-seq, LARRY를 가장 핵심적인 데이터 기준으로 활용한다
 
-## If the question is specifically about model identity
+## 모델의 정체성에 관한 질문이라면
 
-annForce looks less like a pure autoencoder and more like:
+annForce는 순수한 autoencoder보다는 다음에 더 가깝다:
 
-- a compositional perturbation model
-- plus a continuous dynamics model
-- plus a fate-aware simulator
+- compositional perturbation 모델
+- 여기에 연속 dynamics 모델을 더하고
+- fate-aware 시뮬레이터를 더한 형태
 
-## Related pages
+## 관련 페이지
 
 - [[annForce]]
 - [[annForce literature scan]]
