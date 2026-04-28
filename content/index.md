@@ -8,7 +8,7 @@ title: Heesun LLM wiki
     <div class="stat-label">프로젝트</div>
   </div>
   <div class="stat">
-    <div class="stat-num">11</div>
+    <div class="stat-num">21</div>
     <div class="stat-label">논문</div>
   </div>
   <div class="stat">
