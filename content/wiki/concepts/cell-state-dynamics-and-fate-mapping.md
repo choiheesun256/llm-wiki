@@ -9,11 +9,11 @@ updated: 2026-04-27
 
 # Cell-State Dynamics and Fate Mapping
 
-## 요약
+## Summary
 
-세포가 state space를 어떻게 이동하고, 분기하며, 최종 운명(terminal fate)으로 수렴하는지를 추론하는 방법론들을 다룬다.
+This topic covers methods that try to infer how cells move through state space, branch, and commit to terminal fates.
 
-## 주요 참고 방법론
+## Main references
 
 - RNA velocity
 - scVelo
@@ -22,26 +22,26 @@ updated: 2026-04-27
 - LARRY lineage tracing
 - Population balance analysis
 
-## 핵심 모델링 긴장 관계
+## Key modeling tensions
 
-- 스냅샷 데이터 vs. 실제 시간 감독(temporal supervision)
-- 지역적 방향성(local directionality) vs. 전체적 fate 구조
-- 메커니즘적 해석 vs. 예측 성능
-- 연속 벡터장 vs. 그래프 기반 전이 연산자
+- Snapshot data versus real temporal supervision
+- Local directionality versus global fate structure
+- Mechanistic interpretation versus predictive utility
+- Continuous vector fields versus graph-based transition operators
 
-## annForce와의 관련성
+## Relevance to annForce
 
-annForce는 두 가지 측면을 동시에 가지고 있어 독특한 위치에 있다:
+annForce is unusual because it sits on both sides of the line:
 
-- perturbation 예측 모델이기도 하고
-- dynamics 모델이기도 하다
+- it is a perturbation prediction model
+- it is also a dynamics model
 
-따라서 평가에는 두 가지 지표가 모두 포함되어야 한다:
+That means its evaluation should probably include both:
 
-- perturbation 재구성 지표
-- fate 및 trajectory 지표
+- perturbation reconstruction metrics
+- fate and trajectory metrics
 
-## 관련 페이지
+## Related pages
 
 - [[annForce]]
 - [[CellRank]]

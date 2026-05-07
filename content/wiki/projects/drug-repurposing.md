@@ -8,7 +8,7 @@ source_files:
   - Clippings/Inferring and Evaluating Network Medicine-Based Disease Modules with Nextflow.md
   - Clippings/nf-corediseasemodulediscovery A pipeline for network-based disease module identification..md
   - Clippings/The end of medicine as we know it - and why your health has a future.md
-updated: 2026-04-29
+updated: 2026-04-28
 ---
 
 # Drug Repurposing
@@ -34,36 +34,19 @@ updated: 2026-04-29
 
 ## 문헌 지도
 
-수집된 자료는 네 축으로 나뉜다:
+현재 클리핑된 자료는 세 축으로 나뉜다:
 
 1. **Network medicine & disease module** — 질병의 네트워크 구조를 이해하고 module을 발견
-2. **Knowledge graph & foundation model** — KG 기반 약물-질병 관계 예측
-3. **Virtual screening** — 대규모 약물-타겟 상호작용 탐색
-4. **Drug repurposing in oncology** — 암 특화 약물 재배치
+2. **Virtual screening** — 대규모 약물-타겟 상호작용 탐색
+3. **Drug repurposing in oncology** — 암 특화 약물 재배치 도구
 
-## 주요 소스
+## 주요 비교 대상
 
-**플랫폼 & 도구**
 - [[CADDIE]] — 암 driver gene 기반 drug repurposing 웹 도구
-- [[NeDRex]] — Network medicine 통합 플랫폼
-- [[Disease Module Discovery]] — Disease module 파이프라인 평가
-- [[DrugCLIP]] — 초고속 virtual screening
-- [[TxGNN]] — Zero-shot drug repurposing foundation model
-
-**Knowledge graph & 데이터**
-- [[OREGANO]] — Drug repurposing용 공개 knowledge graph
-- [[Disease Similarity Networks]] — 다층 질병 유사성 네트워크
-
-**리뷰 & 개론**
+- [[DrugCLIP]] — Contrastive learning 기반 초고속 virtual screening
+- [[Disease Module Discovery]] — Network medicine 기반 disease module 파이프라인 평가
+- [[nf-core-diseasemodulediscovery]] — 실제 Nextflow 파이프라인
 - [[Systems Medicine]] — Network medicine 패러다임 개론
-- [[Cancer Drug Repurposing Review]] — 암 drug repurposing 종합 리뷰
-- [[KG Drug Repurposing Review]] — KG 기반 방법론 리뷰
-- [[Multi-omics Drug Discovery Review]] — Multi-omics 통합 방법 리뷰
-
-**사례 연구**
-- [[Drug Combination Networks]] — 약물 조합의 네트워크 원리
-- [[Network Medicine Target Discovery]] — Multi-omics 통합 타겟 발견
-- [[Brain Cancer Drug Repurposing]] — 뇌암 특화 repurposing
 
 ## 핵심 질문들
 
@@ -74,12 +57,12 @@ updated: 2026-04-29
 
 ## 읽기 순서
 
-1. [[Systems Medicine]] — 전체 패러다임 이해
-2. [[Cancer Drug Repurposing Review]] — 암 repurposing 전체 그림
-3. [[network-medicine]] · [[KG Drug Repurposing Review]] — 방법론 기반
-4. [[Disease Module Discovery]] · [[NeDRex]] — 플랫폼과 파이프라인
-5. [[TxGNN]] · [[DrugCLIP]] — 최신 AI 도구
-6. [[CADDIE]] · [[Brain Cancer Drug Repurposing]] — 암종 특화 사례
+- [[Systems Medicine]]
+- [[network-medicine]]
+- [[Disease Module Discovery]]
+- [[CADDIE]]
+- [[DrugCLIP]]
+- [[virtual-screening]]
 
 ## 관련 페이지
 

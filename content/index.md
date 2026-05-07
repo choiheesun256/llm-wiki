@@ -8,7 +8,7 @@ title: Heesun LLM wiki
     <div class="stat-label">프로젝트</div>
   </div>
   <div class="stat">
-    <div class="stat-num">21</div>
+    <div class="stat-num">31</div>
     <div class="stat-label">논문</div>
   </div>
   <div class="stat">
@@ -44,7 +44,27 @@ Perturbation을 additive force field로 표현하는 single-cell 모델
 Network medicine 기반 암 환자 대상 약물 재배치
 
 - [[CADDIE]] · [[DrugCLIP]] · [[Disease Module Discovery|Disease Module]]
-- [[Systems Medicine]] · [[nf-core-diseasemodulediscovery|nf-core pipeline]]
+- [[Systems Medicine]] · [[kersting-2025-nf-core-nextflow-disease-module|nf-core pipeline]]
+
+</div>
+
+<div class="card">
+<span class="card-badge badge-cancer">표적항암</span>
+
+### Cancer — 표적항암치료제 멀티오믹스
+
+**Drug discovery & screening**
+- [[zhang-2026-proteinaligner-tri-modal-contrastive-learning|ProteinAligner]] · [[jia-2026-drugclip-contrastive-learning-genome-scale|DrugCLIP]]
+- [[tong-2026-multimodal-dl-lincs-l1000-hdac|HDAC Inhibitor (LINCS)]] · [[chauquet-2026-twas-signature-matching-for-drug|TWAS Drug Prioritisation]]
+
+**Network medicine**
+- [[hartung-2022-caddie-cancer-driver-drug-interaction|CADDIE]] · [[kersting-2025-nf-core-nextflow-disease-module|nf-core Disease Module]]
+
+**Immunotherapy**
+- [[savage-2026-t-cell-state-tf-cooperative|CAR-T TF Engineering]] · [[altenburger-2026-lymphoid-chemokine-cd8-t-cell|Chemokine T cell Priming]]
+
+**Multimodal & Platform**
+- [[zhang-2026-multi-embed-pathology-wsi-multimodal|Multi-Embed (WSI+omics)]] · [[wu-2026-reimagining-human-centric-drug-development|NAMs Review]]
 
 </div>
 
@@ -57,10 +77,6 @@ Network medicine 기반 암 환자 대상 약물 재배치
 - [[scGen]] · [[CPA]] · [[CellOT]]
 - [[GEARS]] · [[CellRank]] · [[GPerturb]]
 - [[InterPLM]]
-
-**Drug repurposing 관련**
-- [[CADDIE]] · [[DrugCLIP]]
-- [[Disease Module Discovery|Disease Module]] · [[Systems Medicine]]
 
 </div>
 

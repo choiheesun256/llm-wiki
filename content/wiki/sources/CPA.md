@@ -9,30 +9,28 @@ updated: 2026-04-27
 
 # CPA
 
-> 📄 [Lotfollahi et al., *Molecular Systems Biology* (2023)](https://doi.org/10.15252/msb.202211517)
+## Summary
 
-## 요약
+`CPA` (Compositional Perturbation Autoencoder) predicts single-cell responses to drug and genetic perturbations by composing additive embeddings in latent space.
 
-`CPA` (Compositional Perturbation Autoencoder)는 latent space에서 additive embedding을 조합하여 약물 및 유전적 perturbation에 대한 single-cell 반응을 예측하는 모델이다.
+## Key points
 
-## 핵심 내용
+- Separates basal state, perturbation, and covariate effects.
+- Supports dosage-aware and combination-aware prediction.
+- Makes composition explicit rather than purely black-box.
 
-- 기저 상태(basal state), perturbation 효과, 공변량(covariate) 효과를 분리하여 모델링한다.
-- 용량(dosage) 및 조합(combination) 인식 예측을 지원한다.
-- 조합 구조를 명시적으로 표현하여 블랙박스 방식을 피한다.
+## Why it matters for annForce
 
-## annForce와의 관련성
+- Conceptually the closest literature neighbor.
+- Both methods rely on additive composition.
+- annForce shifts the additive idea from latent embeddings to force fields over state trajectories.
 
-- 개념적으로 가장 가까운 선행 연구다.
-- 두 방법 모두 additive composition에 의존한다.
-- annForce는 이 additive 아이디어를 latent embedding이 아닌 상태 궤적 위의 force field로 확장한다.
+## Limitations
 
-## 한계점
+- Additivity is expressed in representation space, not directly in state-space dynamics.
+- Biological interactions can violate simple composition unless modeled separately.
 
-- Additivity가 표현 공간(representation space)에서 이루어지며, 상태 공간(state-space) dynamics에 직접 적용되지 않는다.
-- 생물학적 상호작용은 별도로 모델링하지 않으면 단순 조합 가정을 위반할 수 있다.
-
-## 관련 페이지
+## Related pages
 
 - [[annForce]]
 - [[GEARS]]
