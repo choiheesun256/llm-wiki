@@ -26,11 +26,22 @@ This vault is organized as an LLM-assisted research wiki built on top of web cli
 - single-cell foundation models and perturbation-trained virtual-cell methods
 - target discovery with genetic safety, transcriptomic reversal, protein flexibility, and binder QC
 - conditioning mechanisms for diffusion transformers, including adaptive layer normalization
+- technical glossary pages for AdaLN-adjacent concepts such as LayerNorm, cross-attention, residual connections, timestep embeddings, and feature-wise modulation
 
 ## Seed pages
 
 - [[notion-literature-review-2026-05-07]]
 - [[adaptive-layer-normalization-adaln]]
+- [[layer-normalization]]
+- [[conditioning-mechanisms]]
+- [[feature-wise-modulation]]
+- [[diffusion-models]]
+- [[diffusion-transformers]]
+- [[transformer-blocks]]
+- [[cross-attention]]
+- [[residual-connections]]
+- [[zero-initialization]]
+- [[timestep-embeddings]]
 - [[peebles-xie-2023-diffusion-transformers]]
 - [[chen-2023-pixart-alpha]]
 - [[zhu-2025-unveiling-adaln-zero]]

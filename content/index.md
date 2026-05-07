@@ -12,7 +12,7 @@ title: Heesun LLM wiki
     <div class="stat-label">논문</div>
   </div>
   <div class="stat">
-    <div class="stat-num">11</div>
+    <div class="stat-num">21</div>
     <div class="stat-label">개념</div>
   </div>
   <div class="stat">
@@ -153,6 +153,12 @@ Genetic evidence, transcriptomic reversal, target safety, binder QC, and degrade
 - [[adaptive-layer-normalization-adaln|Adaptive Layer Normalization (AdaLN)]]
 - [[single-cell-foundation-models|Single-cell foundation models]]
 - [[spatial-ai-for-cancer|Spatial AI for cancer]]
+
+**AdaLN 주변 개념**
+
+- [[layer-normalization|LayerNorm]] · [[conditioning-mechanisms|Conditioning]] · [[feature-wise-modulation|Feature-wise modulation]]
+- [[diffusion-models|Diffusion models]] · [[diffusion-transformers|Diffusion transformers]] · [[timestep-embeddings|Timestep embeddings]]
+- [[transformer-blocks|Transformer blocks]] · [[cross-attention|Cross-attention]] · [[residual-connections|Residual connections]] · [[zero-initialization|Zero initialization]]
 
 </div>
 
