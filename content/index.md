@@ -4,15 +4,15 @@ title: Heesun LLM wiki
 
 <div class="stats-row">
   <div class="stat">
-    <div class="stat-num">2</div>
+    <div class="stat-num">5</div>
     <div class="stat-label">프로젝트</div>
   </div>
   <div class="stat">
-    <div class="stat-num">31</div>
+    <div class="stat-num">46</div>
     <div class="stat-label">논문</div>
   </div>
   <div class="stat">
-    <div class="stat-num">8</div>
+    <div class="stat-num">10</div>
     <div class="stat-label">개념</div>
   </div>
   <div class="stat">
@@ -22,6 +22,20 @@ title: Heesun LLM wiki
 </div>
 
 <div class="card-grid">
+
+<div class="card">
+<span class="card-badge">리뷰</span>
+
+### [[notion-literature-review-2026-05-07|Notion Review 2026-05-07]]
+
+Notion 프로젝트별 참고 논문 허브를 읽고 암, 싱글셀, 공간전사체, ML/DL 중심으로 선별한 업데이트
+
+- [[spatial-ai-for-cancer|Spatial AI for Cancer]]
+- [[single-cell-foundation-models|Single-Cell Foundation Models]]
+- [[vital-digital-cell|VITAL Digital Cell]]
+- [[nrl-target-discovery|NRL Target Discovery]]
+
+</div>
 
 <div class="card">
 <span class="card-badge">프로젝트</span>
@@ -54,17 +68,49 @@ Network medicine 기반 암 환자 대상 약물 재배치
 ### Cancer — 표적항암치료제 멀티오믹스
 
 **Drug discovery & screening**
+
 - [[zhang-2026-proteinaligner-tri-modal-contrastive-learning|ProteinAligner]] · [[jia-2026-drugclip-contrastive-learning-genome-scale|DrugCLIP]]
 - [[tong-2026-multimodal-dl-lincs-l1000-hdac|HDAC Inhibitor (LINCS)]] · [[chauquet-2026-twas-signature-matching-for-drug|TWAS Drug Prioritisation]]
 
 **Network medicine**
+
 - [[hartung-2022-caddie-cancer-driver-drug-interaction|CADDIE]] · [[kersting-2025-nf-core-nextflow-disease-module|nf-core Disease Module]]
 
 **Immunotherapy**
+
 - [[savage-2026-t-cell-state-tf-cooperative|CAR-T TF Engineering]] · [[altenburger-2026-lymphoid-chemokine-cd8-t-cell|Chemokine T cell Priming]]
 
 **Multimodal & Platform**
+
 - [[zhang-2026-multi-embed-pathology-wsi-multimodal|Multi-Embed (WSI+omics)]] · [[wu-2026-reimagining-human-centric-drug-development|NAMs Review]]
+- [[cui-2026-haiku-spatial-biology-clinical-histology|Haiku]] · [[tran-2026-phoenix-virtual-spatial-transcriptomics|Phoenix]]
+- [[bilous-2026-xenium-split-spillover|Xenium/SPLIT QC]] · [[spatial-ai-for-cancer|Spatial AI map]]
+
+</div>
+
+<div class="card">
+<span class="card-badge">디지털세포</span>
+
+### [[vital-digital-cell|VITAL Digital Cell]]
+
+Single-cell foundation model, perturbation prediction, spatial multiomics, validation workflow
+
+- [[gandhi-2025-tahoe-x1-perturbation-trained-sc-fm|Tahoe-x1]] · [[wenkel-tu-2026-txpert-knowledge-graphs|TxPert]]
+- [[zhang-2026-igof-perturb-seq|iGOF-Perturb-seq]] · [[benjamin-zador-2026-tissueformer|TissueFormer]]
+- [[single-cell-foundation-models|scFM map]]
+
+</div>
+
+<div class="card">
+<span class="card-badge badge-cancer">타겟 발굴</span>
+
+### [[nrl-target-discovery|NRL Target Discovery]]
+
+Genetic evidence, transcriptomic reversal, target safety, binder QC, and degrader biology
+
+- [[tsepilov-2026-gentropy-pleiotropy-target-safety|Gentropy]] · [[xing-2026-gps-transcriptomic-reversal|GPS]]
+- [[piochi-2026-proteus-protein-flexibility|PROTEUS]] · [[chun-2026-antibody-cdr-fitness-mapping|CDR fitness]]
+- [[scharping-2026-t-cell-exhaustion-proteostasis|T cell proteostasis]]
 
 </div>
 
@@ -74,9 +120,15 @@ Network medicine 기반 암 환자 대상 약물 재배치
 ### 소스 노트
 
 **annForce 관련**
+
 - [[scGen]] · [[CPA]] · [[CellOT]]
 - [[GEARS]] · [[CellRank]] · [[GPerturb]]
 - [[InterPLM]]
+
+**Notion review 추가**
+
+- [[cui-2026-haiku-spatial-biology-clinical-histology|Haiku]] · [[tran-2026-phoenix-virtual-spatial-transcriptomics|Phoenix]]
+- [[wenkel-tu-2026-txpert-knowledge-graphs|TxPert]] · [[gandhi-2025-tahoe-x1-perturbation-trained-sc-fm|Tahoe-x1]]
 
 </div>
 
@@ -93,6 +145,8 @@ Network medicine 기반 암 환자 대상 약물 재배치
 - [[virtual-screening|Virtual screening]]
 - [[protein-language-models|Protein language models]]
 - [[sparse-autoencoders|Sparse autoencoders]]
+- [[single-cell-foundation-models|Single-cell foundation models]]
+- [[spatial-ai-for-cancer|Spatial AI for cancer]]
 
 </div>
 

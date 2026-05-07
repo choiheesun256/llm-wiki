@@ -5,7 +5,7 @@ status: active
 source_files:
   - Clippings/GPerturb Gaussian process modelling of single-cell perturbation data - Nature Communications.md
   - Clippings/annForce related literature scan - IF5+ papers.md
-updated: 2026-04-27
+updated: 2026-05-07
 ---
 
 # Single-Cell Methods
@@ -19,6 +19,8 @@ Track modeling patterns across single-cell analysis papers and tools.
 - probabilistic generative modeling
 - protein language modeling
 - interpretable representation learning
+- single-cell foundation models
+- spatial multiomics and multicellular motif mining
 
 ## annForce-relevant subarea
 
@@ -37,3 +39,13 @@ That makes the key references:
 - [[CellRank]]
 - [[single-cell-perturbation-prediction]]
 - [[cell-state-dynamics-and-fate-mapping]]
+- [[single-cell-foundation-models]]
+- [[wenkel-tu-2026-txpert-knowledge-graphs]]
+- [[gandhi-2025-tahoe-x1-perturbation-trained-sc-fm]]
+- [[benjamin-zador-2026-tissueformer]]
+
+## Spatial and multiome additions
+
+- [[chang-2026-scigma-spatial-multiomics]]: scalable spatial multiomics integration with uncertainty
+- [[an-2026-spatialquery-multicellular-motifs]]: multicellular motif discovery from spatial omics
+- [[hemminger-2026-cipher-codebook-design]]: differentiable codebook design for spatial transcriptomics assays

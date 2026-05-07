@@ -8,7 +8,7 @@ source_files:
   - Clippings/Inferring and Evaluating Network Medicine-Based Disease Modules with Nextflow.md
   - Clippings/nf-corediseasemodulediscovery A pipeline for network-based disease module identification..md
   - Clippings/The end of medicine as we know it - and why your health has a future.md
-updated: 2026-04-28
+updated: 2026-05-07
 ---
 
 # Drug Repurposing
@@ -31,6 +31,7 @@ updated: 2026-04-28
 - 이미 안전성이 검증된 약물을 활용하므로 임상 진입이 빠름
 - Network medicine 관점에서 직접 타겟이 불가능한 유전자도 간접적으로 공략 가능
 - Computational 방법의 발전으로 genome 규모의 스크리닝이 현실화됨
+- Transcriptomic reversal과 genetic safety evidence를 함께 쓰면 단순 hit 탐색보다 기능적 우선순위가 좋아질 수 있음
 
 ## 문헌 지도
 
@@ -39,6 +40,7 @@ updated: 2026-04-28
 1. **Network medicine & disease module** — 질병의 네트워크 구조를 이해하고 module을 발견
 2. **Virtual screening** — 대규모 약물-타겟 상호작용 탐색
 3. **Drug repurposing in oncology** — 암 특화 약물 재배치 도구
+4. **Functional reversal and target safety** — 질병 시그니처 반전과 pleiotropy 기반 안전성 평가
 
 ## 주요 비교 대상
 
@@ -47,6 +49,8 @@ updated: 2026-04-28
 - [[Disease Module Discovery]] — Network medicine 기반 disease module 파이프라인 평가
 - [[nf-core-diseasemodulediscovery]] — 실제 Nextflow 파이프라인
 - [[Systems Medicine]] — Network medicine 패러다임 개론
+- [[xing-2026-gps-transcriptomic-reversal]] — 질병 transcriptomic state reversal 기반 de novo therapeutic design
+- [[tsepilov-2026-gentropy-pleiotropy-target-safety]] — target safety and pleiotropy evidence layer
 
 ## 핵심 질문들
 
@@ -68,3 +72,4 @@ updated: 2026-04-28
 
 - [[network-medicine]]
 - [[virtual-screening]]
+- [[nrl-target-discovery]]

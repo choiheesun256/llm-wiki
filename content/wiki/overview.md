@@ -7,6 +7,7 @@ source_files:
   - Clippings/annForce related literature scan - IF5+ papers.md
   - Clippings/InterPLM discovering interpretable features in protein language models via sparse autoencoders - Nature Methods.md
 updated: 2026-04-27
+last_notion_review: 2026-05-07
 ---
 
 # Overview
@@ -21,10 +22,16 @@ This vault is organized as an LLM-assisted research wiki built on top of web cli
 - protein language models
 - model interpretability
 - clipped paper pages and article summaries
+- cancer spatial AI, virtual spatial transcriptomics, and spatial assay QC
+- single-cell foundation models and perturbation-trained virtual-cell methods
+- target discovery with genetic safety, transcriptomic reversal, protein flexibility, and binder QC
 
 ## Seed pages
 
+- [[notion-literature-review-2026-05-07]]
 - [[annForce]]
+- [[vital-digital-cell]]
+- [[nrl-target-discovery]]
 - [[annForce literature scan]]
 - [[GPerturb]]
 - [[InterPLM]]
@@ -35,6 +42,8 @@ This vault is organized as an LLM-assisted research wiki built on top of web cli
 - [[protein-language-models]]
 - [[sparse-autoencoders]]
 - [[method-comparison-matrix]]
+- [[single-cell-foundation-models]]
+- [[spatial-ai-for-cancer]]
 
 ## Open questions
 
@@ -43,3 +52,5 @@ This vault is organized as an LLM-assisted research wiki built on top of web cli
 - Which perturbation methods are predictive versus mechanistically interpretable?
 - How should clipped source pages be promoted into durable concept pages?
 - Which PLM features reflect true mechanism versus annotation-correlated patterns?
+- When can H&E-derived virtual spatial transcriptomics be trusted enough for biomarker discovery?
+- How should target-first discovery be combined with transcriptomic reversal and pleiotropy-based safety screens?
