@@ -8,11 +8,11 @@ title: Heesun LLM wiki
     <div class="stat-label">프로젝트</div>
   </div>
   <div class="stat">
-    <div class="stat-num">46</div>
+    <div class="stat-num">52</div>
     <div class="stat-label">논문</div>
   </div>
   <div class="stat">
-    <div class="stat-num">10</div>
+    <div class="stat-num">11</div>
     <div class="stat-label">개념</div>
   </div>
   <div class="stat">
@@ -130,6 +130,11 @@ Genetic evidence, transcriptomic reversal, target safety, binder QC, and degrade
 - [[cui-2026-haiku-spatial-biology-clinical-histology|Haiku]] · [[tran-2026-phoenix-virtual-spatial-transcriptomics|Phoenix]]
 - [[wenkel-tu-2026-txpert-knowledge-graphs|TxPert]] · [[gandhi-2025-tahoe-x1-perturbation-trained-sc-fm|Tahoe-x1]]
 
+**AdaLN / diffusion transformer**
+
+- [[ba-2016-layer-normalization|LayerNorm]] · [[kim-2017-dynamic-layer-normalization|Dynamic LayerNorm]] · [[perez-2018-film-conditioning-layer|FiLM]]
+- [[peebles-xie-2023-diffusion-transformers|DiT]] · [[chen-2023-pixart-alpha|PixArt-alpha]] · [[zhu-2025-unveiling-adaln-zero|AdaLN-Zero analysis]]
+
 </div>
 
 <div class="card">
@@ -145,6 +150,7 @@ Genetic evidence, transcriptomic reversal, target safety, binder QC, and degrade
 - [[virtual-screening|Virtual screening]]
 - [[protein-language-models|Protein language models]]
 - [[sparse-autoencoders|Sparse autoencoders]]
+- [[adaptive-layer-normalization-adaln|Adaptive Layer Normalization (AdaLN)]]
 - [[single-cell-foundation-models|Single-cell foundation models]]
 - [[spatial-ai-for-cancer|Spatial AI for cancer]]
 

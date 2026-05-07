@@ -6,7 +6,7 @@ source_files:
   - Clippings/GPerturb Gaussian process modelling of single-cell perturbation data - Nature Communications.md
   - Clippings/annForce related literature scan - IF5+ papers.md
   - Clippings/InterPLM discovering interpretable features in protein language models via sparse autoencoders - Nature Methods.md
-updated: 2026-04-27
+updated: 2026-05-07
 last_notion_review: 2026-05-07
 ---
 
@@ -25,10 +25,15 @@ This vault is organized as an LLM-assisted research wiki built on top of web cli
 - cancer spatial AI, virtual spatial transcriptomics, and spatial assay QC
 - single-cell foundation models and perturbation-trained virtual-cell methods
 - target discovery with genetic safety, transcriptomic reversal, protein flexibility, and binder QC
+- conditioning mechanisms for diffusion transformers, including adaptive layer normalization
 
 ## Seed pages
 
 - [[notion-literature-review-2026-05-07]]
+- [[adaptive-layer-normalization-adaln]]
+- [[peebles-xie-2023-diffusion-transformers]]
+- [[chen-2023-pixart-alpha]]
+- [[zhu-2025-unveiling-adaln-zero]]
 - [[annForce]]
 - [[vital-digital-cell]]
 - [[nrl-target-discovery]]
@@ -54,3 +59,4 @@ This vault is organized as an LLM-assisted research wiki built on top of web cli
 - Which PLM features reflect true mechanism versus annotation-correlated patterns?
 - When can H&E-derived virtual spatial transcriptomics be trusted enough for biomarker discovery?
 - How should target-first discovery be combined with transcriptomic reversal and pleiotropy-based safety screens?
+- When is AdaLN sufficient for biological conditioning, and when is cross-attention over structured condition tokens necessary?
