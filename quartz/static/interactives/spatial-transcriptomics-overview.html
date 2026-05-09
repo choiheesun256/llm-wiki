@@ -355,14 +355,90 @@
   </div>
 </div>
 
-<!-- L-R note -->
-<div class="note">
-  <strong>L-R (리간드-수용체) 쌍 분석 현황:</strong><br>
-  &bull; <strong>Li H. 2026 (Pan-cancer TSME)</strong> &mdash; 373 Visium 샘플, 12 암종에서 13 niche별 L-R 체계적 분석. CXCL16-CXCR6, CXCL12-CXCR4, CCL19-CCR7, IL1B-IL1R2 등 niche-specific/shared L-R pair 동정.<br>
-  &bull; <strong>Wang 2026</strong> &mdash; CellChat으로 CRC/GC TLS 내 CXCL16-CXCR6, CXCL10-CXCR3 L-R pair 동정. Visium ST에서 공간적 검증.<br>
-  &bull; <strong>FineST (Li 2026)</strong> &mdash; CellChat DB 기반, Visium HD + Xenium에서 nuclei-resolved L-R 분석. 유방암 invasive front, NPC TLS, HCC PD-1 저항 메커니즘 발견.<br>
-  &bull; <strong>SPLIT (Bilous 2026)</strong> &mdash; Xenium spillover 보정이 L-R 분석 정확도에 영향을 준다고 보고.<br>
-  &bull; L-R 분석 도구: CellChat, CellPhoneDB, SpatialDM, SPIDER, FineST, stLearn 등.
+<!-- L-R Section -->
+<div class="section-title">L-R (리간드-수용체) 쌍 분석 현황</div>
+
+<div class="grid grid-2">
+  <div class="card">
+    <h2>논문별 L-R 분석 요약</h2>
+    <div style="overflow-x:auto;">
+    <table style="width:100%; border-collapse:collapse; font-size:0.8rem; color:var(--muted);">
+      <thead>
+        <tr style="border-bottom:1px solid var(--border); color:var(--accent); text-transform:uppercase; font-size:0.7rem; letter-spacing:0.05em;">
+          <th style="padding:8px 6px; text-align:left;">논문</th>
+          <th style="padding:8px 6px; text-align:left;">분석 도구</th>
+          <th style="padding:8px 6px; text-align:left;">주요 L-R pairs</th>
+          <th style="padding:8px 6px; text-align:left;">생물학적 맥락</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px 6px; color:var(--text); font-weight:600;">Li H. 2026<br><span style="font-weight:400; color:var(--muted); font-size:0.72rem;">Pan-cancer TSME</span></td>
+          <td style="padding:8px 6px;">Meta-analysis<br>LR score</td>
+          <td style="padding:8px 6px; font-family:monospace; font-size:0.72rem;">
+            CXCL12-CXCR4<br>CXCL16-CXCR6<br>CXCL9-CXCR3<br>CCL19-CCR7<br>CXCL13-CXCR5<br>IL1B-IL1R2<br>IL15-IL15RA<br>CD274-PDCD1
+          </td>
+          <td style="padding:8px 6px; font-size:0.75rem;">
+            13 niche별 체계적 L-R 분석<br>
+            <span style="color:#6ee7b7;">Niche_11/13</span>: 면역활성 → 좋은 예후<br>
+            <span style="color:#f87171;">Niche_4</span>: 대식세포+종양 → ICI 저항
+          </td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px 6px; color:var(--text); font-weight:600;">Wang 2026<br><span style="font-weight:400; color:var(--muted); font-size:0.72rem;">CRC/GC TLS</span></td>
+          <td style="padding:8px 6px;">CellChat<br>stLearn</td>
+          <td style="padding:8px 6px; font-family:monospace; font-size:0.72rem;">
+            CXCL16-CXCR6<br>CXCL10-CXCR3
+          </td>
+          <td style="padding:8px 6px; font-size:0.75rem;">
+            <span style="color:#79b8ff;">CRC</span>: CD16+ 대식세포 → CD8+ T세포 모집<br>
+            <span style="color:#fde68a;">GC</span>: ISG15+ 대식세포 → ISG+ CD8+ T세포<br>
+            Visium에서 공간적 검증
+          </td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px 6px; color:var(--text); font-weight:600;">FineST 2026<br><span style="font-weight:400; color:var(--muted); font-size:0.72rem;">Li L. et al.</span></td>
+          <td style="padding:8px 6px;">FineST<br>(CellChat DB)</td>
+          <td style="padding:8px 6px; font-family:monospace; font-size:0.72rem;">
+            INHBA-ACVR1B<br>NRG1-ERBB3<br>CD70-CD27<br>CCL3-CCR1
+          </td>
+          <td style="padding:8px 6px; font-size:0.75rem;">
+            유방암: invasive front CAF-종양 소통<br>
+            NPC: TLS 내 Treg 모집<br>
+            HCC: PD-1 저항 장벽<br>
+            <strong>핵 수준 해상도</strong> L-R 매핑
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:8px 6px; color:var(--text); font-weight:600;">SPLIT 2026<br><span style="font-weight:400; color:var(--muted); font-size:0.72rem;">Bilous et al.</span></td>
+          <td style="padding:8px 6px;">Xenium QC</td>
+          <td style="padding:8px 6px; font-family:monospace; font-size:0.72rem; color:var(--muted);">
+            (직접 L-R 분석 아님)
+          </td>
+          <td style="padding:8px 6px; font-size:0.75rem;">
+            Spillover 보정 → L-R 분석 정확도 영향<br>
+            보정 전/후 소진 마커 차이 보고
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  <div class="card">
+    <h2>주요 L-R pair &times; Niche/암종 매핑</h2>
+    <div class="chart-container">
+      <canvas id="lrChart"></canvas>
+    </div>
+  </div>
+</div>
+
+<div class="note" style="margin-top:1rem;">
+  <strong>L-R 분석 도구 비교:</strong><br>
+  &bull; <strong>CellChat</strong> &mdash; 가장 널리 사용. 분비형/접촉형/ECM 경로 분류. Wang, FineST에서 사용.<br>
+  &bull; <strong>FineST</strong> &mdash; 조직학 이미지 + ST 융합, 핵 수준 해상도에서 L-R 분석. contrastive learning 기반.<br>
+  &bull; <strong>SPIDER</strong> &mdash; 공간적으로 가변적인 L-R 상호작용(SVI) 동정. 하류 전사인자 활성으로 기능적 검증.<br>
+  &bull; <strong>stLearn</strong> &mdash; Visium 공간 좌표 기반 L-R 통신 강도 추정. Wang에서 공간 검증에 사용.<br>
+  &bull; <strong>SpatialDM / CellPhoneDB / NicheNet</strong> &mdash; 추가 L-R/CCC 분석 도구.
 </div>
 
 <!-- Paper list -->
@@ -787,6 +863,43 @@ new Chart(document.getElementById('cellCountChart'), {
       x: { grid: { display: false }, ticks: { color: labelColor, font: { weight: '600', size: 10 } } },
       y: { type: 'logarithmic', grid: { color: gridColor }, ticks: { color: tickColor, callback: v => v >= 1e6 ? (v/1e6)+'M' : v >= 1e3 ? (v/1e3)+'K' : v },
         title: { display: true, text: '세포 수 (로그)', color: tickColor } }
+    }
+  }
+});
+
+// 7. L-R pair x Niche heatmap-style chart
+new Chart(document.getElementById('lrChart'), {
+  type: 'bar',
+  data: {
+    labels: ['CXCL12\nCXCR4', 'CXCL16\nCXCR6', 'CXCL9/10\nCXCR3', 'CCL19\nCCR7', 'CXCL13\nCXCR5', 'IL1B\nIL1R2', 'IL15\nIL15RA', 'CD274\nPDCD1', 'INHBA\nACVR1B', 'NRG1\nERBB3'],
+    datasets: [
+      { label: 'Li H. TSME (pan-cancer)', data: [1,1,1,1,1,1,1,1,0,0], backgroundColor: 'rgba(148,163,184,0.7)', borderColor: '#94a3b8', borderWidth: 1, borderRadius: 4 },
+      { label: 'Wang (CRC/GC)', data: [0,1,1,0,0,0,0,0,0,0], backgroundColor: 'rgba(103,232,249,0.7)', borderColor: c.cyan, borderWidth: 1, borderRadius: 4 },
+      { label: 'FineST (multi-cancer)', data: [0,0,0,0,0,0,0,0,1,1], backgroundColor: 'rgba(244,114,182,0.7)', borderColor: c.pink, borderWidth: 1, borderRadius: 4 },
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { labels: { color: labelColor, font: { size: 9 }, usePointStyle: true }, position: 'bottom' },
+      tooltip: {
+        backgroundColor: '#1e293b', titleColor: '#e2e8f0', bodyColor: '#94a3b8',
+        borderColor: '#334155', borderWidth: 1, cornerRadius: 8, padding: 12,
+        callbacks: {
+          afterLabel: function(ctx) {
+            const info = [
+              ['Niche_7~13 (7 niches)', 'Niche_11 (면역+대식세포)', 'Niche_11,13 (면역활성)', 'Niche_13 (TLS-like)', 'Niche_13 (TLS-like)', 'Niche_4 (종양+대식세포, 나쁜예후)', 'Niche_11 (T/NK 활성)', 'Niche_13 (면역관문)', '', ''],
+              ['', 'CRC: CD16+Mac→CD8+T', 'GC: ISG15+Mac→ISG+CD8+T', '', '', '', '', '', '', ''],
+              ['', '', '', '', '', '', '', '', '유방 invasive front', '유방 CAF-종양 소통'],
+            ];
+            return info[ctx.datasetIndex][ctx.dataIndex] || '';
+          }
+        }
+      }
+    },
+    scales: {
+      x: { stacked: true, grid: { display: false }, ticks: { color: labelColor, font: { size: 9, weight: '600', family: 'monospace' }, maxRotation: 0 } },
+      y: { stacked: true, grid: { color: gridColor }, ticks: { color: tickColor, stepSize: 1 }, title: { display: true, text: '보고 논문 수', color: tickColor } }
     }
   }
 });
