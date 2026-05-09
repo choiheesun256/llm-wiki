@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>암 공간전사체 논문 데이터 개요</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --border: #334155;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --accent2: #a78bfa;
+    --accent3: #34d399;
+    --accent4: #fb923c;
+    --accent5: #f472b6;
+    --accent6: #facc15;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--accent); }
+  h2 { font-size: 1.3rem; margin-bottom: 1rem; color: var(--accent2); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+  .subtitle { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; }
+  .grid { display: grid; gap: 1.5rem; margin-bottom: 2rem; }
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .card-full { grid-column: 1 / -1; }
+  .stat-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+  .stat-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+  }
+  .stat-box .num { font-size: 2rem; font-weight: 700; color: var(--accent); }
+  .stat-box .label { font-size: 0.85rem; color: var(--muted); }
+  .chart-container { position: relative; width: 100%; }
+  .chart-container canvas { width: 100% !important; }
+
+  /* Interactive table */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .data-table th {
+    background: #0f172a;
+    color: var(--accent);
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 2px solid var(--accent);
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+    user-select: none;
+  }
+  .data-table th:hover { color: var(--accent3); }
+  .data-table th::after { content: ' \u2195'; font-size: 0.7rem; color: var(--muted); }
+  .data-table td {
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .data-table tr:hover { background: rgba(56, 189, 248, 0.08); }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: 2px;
+  }
+  .badge-visium { background: #1e3a5f; color: #60a5fa; }
+  .badge-xenium { background: #1a3329; color: #34d399; }
+  .badge-merscope { background: #3b1f4a; color: #c084fc; }
+  .badge-vhd { background: #3b2f1a; color: #fbbf24; }
+  .badge-legacy { background: #2d2d2d; color: #a1a1aa; }
+  .badge-merfish { background: #3b1f2a; color: #f472b6; }
+  .badge-mif { background: #1a2f3b; color: #67e8f9; }
+
+  .tooltip-box {
+    display: none;
+    position: fixed;
+    background: #1e293b;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    padding: 1rem;
+    max-width: 400px;
+    z-index: 100;
+    font-size: 0.85rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  }
+  .tooltip-box.show { display: block; }
+  .note {
+    background: rgba(251, 146, 60, 0.1);
+    border-left: 3px solid var(--accent4);
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+    border-radius: 0 6px 6px 0;
+  }
+  .filter-bar {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  .filter-btn {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.2s;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+  }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  @media (max-width: 900px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    body { padding: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<h1>암 공간전사체 데이터 개요</h1>
+<p class="subtitle">LLM-Wiki 수록 논문 기반 &mdash; 플랫폼, 샘플 규모, 세포 유형 분석 현황 (2026-05-09 기준)</p>
+
+<!-- Summary stats -->
+<div class="stat-row">
+  <div class="stat-box">
+    <div class="num">7</div>
+    <div class="label">분석 논문 수</div>
+  </div>
+  <div class="stat-box">
+    <div class="num">7</div>
+    <div class="label">공간 플랫폼 종류</div>
+  </div>
+  <div class="stat-box">
+    <div class="num">~3,500</div>
+    <div class="label">총 조직 절편 수</div>
+  </div>
+  <div class="stat-box">
+    <div class="num">10M+</div>
+    <div class="label">공간 전사체 총 수</div>
+  </div>
+  <div class="stat-box">
+    <div class="num">16+</div>
+    <div class="label">암종/장기 유형</div>
+  </div>
+</div>
+
+<!-- Charts row 1 -->
+<div class="grid grid-2">
+  <div class="card">
+    <h2>플랫폼별 논문 사용 빈도</h2>
+    <div class="chart-container">
+      <canvas id="platformChart"></canvas>
+    </div>
+  </div>
+  <div class="card">
+    <h2>논문별 샘플 규모 (조직 절편/슬라이드)</h2>
+    <div class="chart-container">
+      <canvas id="sampleChart"></canvas>
+    </div>
+  </div>
+</div>
+
+<!-- Charts row 2 -->
+<div class="grid grid-2">
+  <div class="card">
+    <h2>플랫폼별 공간 해상도 비교</h2>
+    <div class="chart-container">
+      <canvas id="resolutionChart"></canvas>
+    </div>
+  </div>
+  <div class="card">
+    <h2>논문별 분석 초점</h2>
+    <div class="chart-container">
+      <canvas id="focusChart"></canvas>
+    </div>
+  </div>
+</div>
+
+<!-- L-R note -->
+<div class="note">
+  <strong>L-R (리간드-수용체) 쌍 분석 참고:</strong> 현재 수록 논문들은 대부분 공간 생태형(spatial ecotype), 가상 공간전사체(virtual ST), QC 보정, 다중모달 통합에 초점을 맞추고 있어 명시적 L-R pair 카운트를 보고하지 않습니다.
+  L-R 분석이 필요한 경우 CellChat, CellPhoneDB, NicheNet 등의 도구를 적용해야 하며, SPLIT(Bilous 2026)에서 spillover 보정이 L-R 분석 정확도에 영향을 준다고 보고했습니다.
+</div>
+
+<!-- Detailed interactive table -->
+<div class="card" style="margin-top:1.5rem; overflow-x:auto;">
+  <h2>논문별 상세 데이터</h2>
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all" onclick="filterTable('all')">전체</button>
+    <button class="filter-btn" data-filter="Visium" onclick="filterTable('Visium')">Visium</button>
+    <button class="filter-btn" data-filter="Xenium" onclick="filterTable('Xenium')">Xenium</button>
+    <button class="filter-btn" data-filter="MERSCOPE" onclick="filterTable('MERSCOPE')">MERSCOPE</button>
+    <button class="filter-btn" data-filter="Visium HD" onclick="filterTable('Visium HD')">Visium HD</button>
+  </div>
+  <table class="data-table" id="mainTable">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">논문</th>
+        <th onclick="sortTable(1)">도구/방법</th>
+        <th onclick="sortTable(2)">플랫폼</th>
+        <th onclick="sortTable(3)">샘플 규모</th>
+        <th onclick="sortTable(4)">암종</th>
+        <th onclick="sortTable(5)">세포 유형/마커</th>
+        <th onclick="sortTable(6)">분석 초점</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-platforms="Visium,legacy ST,MERSCOPE,Xenium,Visium HD">
+        <td><strong>Zhang 2026</strong><br><em>Nature</em></td>
+        <td>Spatial EcoTyper<br>Liquid EcoTyper</td>
+        <td>
+          <span class="badge badge-visium">Visium</span>
+          <span class="badge badge-legacy">legacy ST</span>
+          <span class="badge badge-merscope">MERSCOPE</span>
+          <span class="badge badge-xenium">Xenium V1</span>
+          <span class="badge badge-xenium">Xenium Prime</span>
+          <span class="badge badge-vhd">Visium HD</span>
+        </td>
+        <td>132 ST 검체<br>144 scRNA-seq<br>78 cfDNA<br>7,076 TCGA</td>
+        <td>10종: BLCA, BRCA, COAD, LC, LIHC, OV, PAAD, PRAD, SCC, SKCM</td>
+        <td>9개 TME 세포 유형<br>(B, Plasma, CD4+ T, CD8+ T, NK, Macro, DC, Fibro, Endo)</td>
+        <td>공간 생태형 발견<br>+ cfDNA 액체생검</td>
+      </tr>
+      <tr data-platforms="Xenium">
+        <td><strong>Tran 2026</strong><br><em>bioRxiv</em></td>
+        <td>Phoenix</td>
+        <td>
+          <span class="badge badge-xenium">Xenium</span>
+        </td>
+        <td>79 Xenium 슬라이드<br>924 코어<br>22.2M 이미지-발현 쌍</td>
+        <td>16개 장기 시스템</td>
+        <td>7개 유전자 패널<br>공간 생태형 정의<br>(면역 기능 장애, 면역 적격, 기질 리모델링)</td>
+        <td>가상 공간전사체<br>(H&E에서 추론)</td>
+      </tr>
+      <tr data-platforms="Xenium">
+        <td><strong>Bilous 2026</strong><br><em>Nat Methods</em></td>
+        <td>SPLIT</td>
+        <td>
+          <span class="badge badge-xenium">Xenium</span>
+          <span class="badge badge-xenium">Xenium 5K Prime</span>
+        </td>
+        <td>41 FFPE 절편<br>27 기증자</td>
+        <td>유방암, 폐암</td>
+        <td>소진 마커: HAVCR2, CTLA4, PDCD1, LAG3, CXCL13</td>
+        <td>Spillover 보정 QC<br>(L-R 분석에 영향)</td>
+      </tr>
+      <tr data-platforms="mIF">
+        <td><strong>Cui 2026</strong><br><em>arXiv</em></td>
+        <td>Haiku</td>
+        <td>
+          <span class="badge badge-mif">mIF</span>
+        </td>
+        <td>3,218 조직 절편<br>26.7M 패치<br>1,606 환자</td>
+        <td>11개 장기 유형</td>
+        <td>52개 바이오마커<br>3-way 교차모달 검색</td>
+        <td>3중 모달 대조학습<br>(H&E + mIF + 텍스트)</td>
+      </tr>
+      <tr data-platforms="Visium,Xenium,Visium HD">
+        <td><strong>Zhang 2026</strong><br><em>Nat Methods</em></td>
+        <td>Multi-Embed</td>
+        <td>
+          <span class="badge badge-visium">Visium</span>
+          <span class="badge badge-xenium">Xenium</span>
+          <span class="badge badge-vhd">Visium HD</span>
+        </td>
+        <td>14,695 TCGA WSI<br>4,173 CPTAC WSI<br>ST: Visium n=785, Xenium n=313, VHD n=512</td>
+        <td>12 TCGA 암종</td>
+        <td>HVG 발현 예측<br>메틸화, 단백질, 돌연변이 추론</td>
+        <td>병리-오믹스<br>다중모달 임베딩</td>
+      </tr>
+      <tr data-platforms="Visium HD,Xenium">
+        <td><strong>Chang 2026</strong><br><em>bioRxiv</em></td>
+        <td>SCIGMA</td>
+        <td>
+          <span class="badge badge-vhd">Visium HD</span>
+          <span class="badge badge-xenium">Xenium Prime</span>
+        </td>
+        <td>미보고 (프리프린트)</td>
+        <td>뇌, 암 (일반)</td>
+        <td>위치별 불확실성 정량화</td>
+        <td>공간 다중오믹스<br>통합</td>
+      </tr>
+      <tr data-platforms="MERFISH">
+        <td><strong>An 2026</strong><br><em>bioRxiv</em></td>
+        <td>SpatialQuery</td>
+        <td>
+          <span class="badge badge-merfish">MERFISH</span>
+        </td>
+        <td>미보고 (프리프린트)</td>
+        <td>뇌, TME</td>
+        <td>다세포 모티프<br>FP-Growth 마이닝</td>
+        <td>공간 모티프 발견<br>세포 이웃 분석</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Platform detail cards -->
+<div class="grid grid-3" style="margin-top:1.5rem;">
+  <div class="card">
+    <h2>10x Visium</h2>
+    <p><strong>해상도:</strong> ~55 um (spot)</p>
+    <p><strong>유형:</strong> Bulk ST (spot-level)</p>
+    <p><strong>사용 논문:</strong> Spatial EcoTyper, Multi-Embed</p>
+    <p><strong>특징:</strong> 가장 널리 사용되는 공간전사체 플랫폼. FFPE 및 신선 조직 지원.</p>
+  </div>
+  <div class="card">
+    <h2>10x Xenium</h2>
+    <p><strong>해상도:</strong> 단일세포 수준</p>
+    <p><strong>유형:</strong> ISH 기반 단일세포</p>
+    <p><strong>사용 논문:</strong> Spatial EcoTyper, Phoenix, SPLIT, Multi-Embed, SCIGMA</p>
+    <p><strong>특징:</strong> V1 (~300 유전자), Prime (~5,000 유전자). SPLIT에서 spillover 문제 보고됨.</p>
+  </div>
+  <div class="card">
+    <h2>Vizgen MERSCOPE</h2>
+    <p><strong>해상도:</strong> 단일세포 수준</p>
+    <p><strong>유형:</strong> MERFISH 기반</p>
+    <p><strong>사용 논문:</strong> Spatial EcoTyper, SpatialQuery</p>
+    <p><strong>특징:</strong> 500 유전자 패널. Spatial EcoTyper의 주요 발견 코호트.</p>
+  </div>
+</div>
+
+<div id="tooltipBox" class="tooltip-box"></div>
+
+<footer>
+  Heesun LLM Wiki &mdash; 암 공간전사체 시각화 | 데이터 출처: llm-wiki 수록 7편 논문<br>
+  최종 업데이트: 2026-05-09
+</footer>
+
+<script>
+// Color palette
+const colors = {
+  blue: '#38bdf8', purple: '#a78bfa', green: '#34d399',
+  orange: '#fb923c', pink: '#f472b6', yellow: '#facc15', cyan: '#67e8f9'
+};
+
+// 1. Platform usage chart
+new Chart(document.getElementById('platformChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Xenium\n(V1/Prime/5K)', 'Visium\n(standard)', 'Visium HD', 'MERSCOPE', 'legacy ST', 'MERFISH', 'mIF'],
+    datasets: [{
+      label: '사용 논문 수',
+      data: [5, 2, 3, 2, 1, 1, 1],
+      backgroundColor: [colors.green, colors.blue, colors.yellow, colors.purple, '#6b7280', colors.pink, colors.cyan],
+      borderRadius: 6,
+      borderSkipped: false,
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          afterLabel: function(ctx) {
+            const details = [
+              'Spatial EcoTyper, Phoenix, SPLIT, Multi-Embed, SCIGMA',
+              'Spatial EcoTyper, Multi-Embed',
+              'Spatial EcoTyper, Multi-Embed, SCIGMA',
+              'Spatial EcoTyper, SpatialQuery',
+              'Spatial EcoTyper',
+              'SpatialQuery',
+              'Haiku'
+            ];
+            return details[ctx.dataIndex];
+          }
+        }
+      }
+    },
+    scales: {
+      x: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' }, title: { display: true, text: '논문 수', color: '#94a3b8' } },
+      y: { grid: { display: false }, ticks: { color: '#e2e8f0', font: { size: 11 } } }
+    }
+  }
+});
+
+// 2. Sample scale chart
+new Chart(document.getElementById('sampleChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Haiku\n(Cui)', 'Spatial\nEcoTyper\n(Zhang)', 'Phoenix\n(Tran)', 'SPLIT\n(Bilous)', 'Multi-Embed\n(Zhang)'],
+    datasets: [{
+      label: '조직 절편/슬라이드 수',
+      data: [3218, 132, 79, 41, 1610],
+      backgroundColor: [colors.cyan, colors.blue, colors.green, colors.orange, colors.purple],
+      borderRadius: 6,
+      borderSkipped: false,
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          afterLabel: function(ctx) {
+            const notes = [
+              '26.7M 패치, 1,606 환자, 11 장기 (mIF)',
+              '10M+ 공간 전사체, 10 암종, 6 ST 플랫폼',
+              '924 코어, 22.2M 이미지-발현 쌍, 16 장기',
+              '27 기증자, 유방/폐 FFPE (Xenium)',
+              'TCGA 14,695 + CPTAC 4,173 WSI, 12 암종'
+            ];
+            return notes[ctx.dataIndex];
+          }
+        }
+      }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: { color: '#e2e8f0', font: { size: 10 } } },
+      y: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' }, title: { display: true, text: '조직 절편/슬라이드 수', color: '#94a3b8' } }
+    }
+  }
+});
+
+// 3. Resolution comparison chart
+new Chart(document.getElementById('resolutionChart'), {
+  type: 'bubble',
+  data: {
+    datasets: [
+      { label: 'Visium', data: [{ x: 55, y: 3, r: 15 }], backgroundColor: 'rgba(56,189,248,0.6)' },
+      { label: 'legacy ST', data: [{ x: 100, y: 1, r: 10 }], backgroundColor: 'rgba(107,114,128,0.6)' },
+      { label: 'Visium HD', data: [{ x: 8, y: 3, r: 12 }], backgroundColor: 'rgba(250,204,21,0.6)' },
+      { label: 'Xenium V1', data: [{ x: 1, y: 5, r: 14 }], backgroundColor: 'rgba(52,211,153,0.6)' },
+      { label: 'Xenium Prime', data: [{ x: 1, y: 5, r: 12 }], backgroundColor: 'rgba(16,185,129,0.6)' },
+      { label: 'MERSCOPE', data: [{ x: 1, y: 2, r: 13 }], backgroundColor: 'rgba(167,139,250,0.6)' },
+      { label: 'MERFISH', data: [{ x: 1, y: 1, r: 8 }], backgroundColor: 'rgba(244,114,182,0.6)' },
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { labels: { color: '#e2e8f0', font: { size: 10 } }, position: 'bottom' },
+      tooltip: {
+        callbacks: {
+          label: function(ctx) {
+            const res = ctx.raw.x;
+            const resLabel = res <= 1 ? '단일세포' : res + ' \u03BCm spot';
+            return ctx.dataset.label + ': ' + resLabel + ' | 사용 논문 ' + ctx.raw.y + '편';
+          }
+        }
+      }
+    },
+    scales: {
+      x: {
+        type: 'logarithmic',
+        grid: { color: '#1e293b' },
+        ticks: { color: '#94a3b8', callback: v => v + ' \u03BCm' },
+        title: { display: true, text: '공간 해상도 (\u03BCm, 로그 스케일)', color: '#94a3b8' }
+      },
+      y: {
+        grid: { color: '#1e293b' },
+        ticks: { color: '#94a3b8' },
+        title: { display: true, text: '사용 논문 수', color: '#94a3b8' }
+      }
+    }
+  }
+});
+
+// 4. Focus radar chart
+new Chart(document.getElementById('focusChart'), {
+  type: 'radar',
+  data: {
+    labels: ['공간 생태형', '가상 ST', 'QC/보정', '다중모달 통합', '병리 연계', '액체생검', '모티프 발견'],
+    datasets: [
+      {
+        label: 'Spatial EcoTyper',
+        data: [5, 1, 1, 3, 1, 5, 2],
+        backgroundColor: 'rgba(56,189,248,0.15)',
+        borderColor: colors.blue,
+        pointBackgroundColor: colors.blue,
+      },
+      {
+        label: 'Phoenix',
+        data: [3, 5, 1, 2, 4, 0, 2],
+        backgroundColor: 'rgba(52,211,153,0.15)',
+        borderColor: colors.green,
+        pointBackgroundColor: colors.green,
+      },
+      {
+        label: 'SPLIT',
+        data: [0, 0, 5, 1, 0, 0, 0],
+        backgroundColor: 'rgba(251,146,60,0.15)',
+        borderColor: colors.orange,
+        pointBackgroundColor: colors.orange,
+      },
+      {
+        label: 'Multi-Embed',
+        data: [1, 1, 0, 5, 5, 0, 0],
+        backgroundColor: 'rgba(167,139,250,0.15)',
+        borderColor: colors.purple,
+        pointBackgroundColor: colors.purple,
+      },
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { labels: { color: '#e2e8f0', font: { size: 10 } }, position: 'bottom' }
+    },
+    scales: {
+      r: {
+        angleLines: { color: '#334155' },
+        grid: { color: '#334155' },
+        pointLabels: { color: '#e2e8f0', font: { size: 10 } },
+        ticks: { display: false },
+        suggestedMin: 0,
+        suggestedMax: 5,
+      }
+    }
+  }
+});
+
+// Table filter
+function filterTable(platform) {
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.filter === platform);
+  });
+  document.querySelectorAll('#mainTable tbody tr').forEach(row => {
+    if (platform === 'all') {
+      row.style.display = '';
+    } else {
+      const platforms = row.dataset.platforms || '';
+      row.style.display = platforms.includes(platform) ? '' : 'none';
+    }
+  });
+}
+
+// Table sort
+let sortDir = {};
+function sortTable(colIdx) {
+  const table = document.getElementById('mainTable');
+  const tbody = table.querySelector('tbody');
+  const rows = Array.from(tbody.querySelectorAll('tr'));
+  sortDir[colIdx] = !sortDir[colIdx];
+  rows.sort((a, b) => {
+    const aText = a.cells[colIdx].textContent.trim();
+    const bText = b.cells[colIdx].textContent.trim();
+    return sortDir[colIdx] ? aText.localeCompare(bText, 'ko') : bText.localeCompare(aText, 'ko');
+  });
+  rows.forEach(row => tbody.appendChild(row));
+}
+</script>
+</body>
+</html>
