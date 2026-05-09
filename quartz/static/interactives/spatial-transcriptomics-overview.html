@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>암 공간전사체 논문 데이터 개요</title>
+<title>암 공간전사체 데이터</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <style>
   :root {
@@ -41,7 +41,6 @@
     border-radius: 12px;
     padding: 1.5rem;
   }
-  .card-full { grid-column: 1 / -1; }
   .stat-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
   .stat-box {
     background: var(--card);
@@ -57,7 +56,6 @@
   .chart-container { position: relative; width: 100%; }
   .chart-container canvas { width: 100% !important; }
 
-  /* Interactive table */
   .data-table {
     width: 100%;
     border-collapse: collapse;
@@ -96,10 +94,8 @@
   .badge-vhd { background: #3b2f1a; color: #fbbf24; }
   .badge-legacy { background: #2d2d2d; color: #a1a1aa; }
   .badge-merfish { background: #3b1f2a; color: #f472b6; }
-  .badge-mif { background: #1a2f3b; color: #67e8f9; }
   .badge-seqfish { background: #2d1a3b; color: #e879f9; }
   .badge-slideseq { background: #1a2d1a; color: #86efac; }
-  .badge-codex { background: #3b2d1a; color: #fcd34d; }
 
   .note {
     background: rgba(251, 146, 60, 0.1);
@@ -147,26 +143,26 @@
 </head>
 <body>
 
-<h1>암 공간전사체 데이터 개요</h1>
-<p class="subtitle">LLM-Wiki 수록 논문 기반 &mdash; 플랫폼, 샘플 규모, 유전자 패널 현황 (2026-05-09 기준)</p>
+<h1>암 공간전사체 데이터</h1>
+<p class="subtitle">LLM-Wiki 수록 논문 기반 &mdash; RNA 기반 공간전사체 플랫폼, 샘플 규모, 유전자 패널 현황 (2026-05-09 기준)</p>
 
 <!-- Summary stats -->
 <div class="stat-row">
   <div class="stat-box">
-    <div class="num">7</div>
+    <div class="num">6</div>
     <div class="label">분석 논문 수</div>
   </div>
   <div class="stat-box">
-    <div class="num">12</div>
-    <div class="label">공간 플랫폼 종류</div>
+    <div class="num">8</div>
+    <div class="label">RNA 기반 ST 플랫폼</div>
   </div>
   <div class="stat-box">
-    <div class="num">~8,100+</div>
+    <div class="num">~500+</div>
     <div class="label">총 조직 절편/슬라이드</div>
   </div>
   <div class="stat-box">
-    <div class="num">80M+</div>
-    <div class="label">총 세포/패치 수</div>
+    <div class="num">20M+</div>
+    <div class="label">총 세포 수</div>
   </div>
   <div class="stat-box">
     <div class="num">16+</div>
@@ -215,7 +211,7 @@
     </div>
   </div>
   <div class="card">
-    <h2>논문별 세포/패치 수 (로그 스케일)</h2>
+    <h2>논문별 세포 수 (로그 스케일)</h2>
     <div class="chart-container">
       <canvas id="cellCountChart"></canvas>
     </div>
@@ -230,6 +226,11 @@
   L-R 분석에는 CellChat, CellPhoneDB, NicheNet 등의 전용 도구가 필요합니다.
 </div>
 
+<div class="note">
+  <strong>제외된 플랫폼:</strong> CODEX (Akoya, 단백질 기반)와 mIF (다중면역형광, 단백질 기반)는 공간 단백체(spatial proteomics) 플랫폼으로, RNA 기반 공간전사체가 아니므로 이 시각화에서 제외했습니다.
+  관련 논문: Haiku (Cui 2026, mIF), SpatialQuery (An 2026, CODEX 데이터 일부).
+</div>
+
 <!-- Detailed interactive table -->
 <div class="card" style="margin-top:1.5rem; overflow-x:auto;">
   <h2>논문별 상세 데이터</h2>
@@ -240,9 +241,8 @@
     <button class="filter-btn" data-filter="MERSCOPE" onclick="filterTable('MERSCOPE')">MERSCOPE</button>
     <button class="filter-btn" data-filter="MERFISH" onclick="filterTable('MERFISH')">MERFISH</button>
     <button class="filter-btn" data-filter="Visium HD" onclick="filterTable('Visium HD')">Visium HD</button>
-    <button class="filter-btn" data-filter="CODEX" onclick="filterTable('CODEX')">CODEX</button>
     <button class="filter-btn" data-filter="seqFISH" onclick="filterTable('seqFISH')">seqFISH</button>
-    <button class="filter-btn" data-filter="mIF" onclick="filterTable('mIF')">mIF</button>
+    <button class="filter-btn" data-filter="Slide-seqV2" onclick="filterTable('Slide-seqV2')">Slide-seqV2</button>
   </div>
   <table class="data-table" id="mainTable">
     <thead>
@@ -296,30 +296,18 @@
         <td>유방암, 폐암</td>
         <td>Spillover 보정 QC<br>(L-R 분석 정확도에 영향)</td>
       </tr>
-      <tr data-platforms="MERFISH,seqFISH,Slide-seqV2,CODEX">
+      <tr data-platforms="MERFISH,seqFISH,Slide-seqV2">
         <td><strong>An 2026</strong><br><em>bioRxiv</em></td>
         <td>SpatialQuery</td>
         <td>
           <span class="badge badge-merfish">MERFISH</span>
           <span class="badge badge-seqfish">seqFISH</span>
           <span class="badge badge-slideseq">Slide-seqV2</span>
-          <span class="badge badge-codex">CODEX</span>
         </td>
-        <td>MERFISH: 239 절편, 8.4M 세포<br>CODEX: 35 환자, 140 FOV, 258K 세포<br>Slide-seqV2: 84 FOV, ~2M 세포<br>seqFISH: 다수 FOV</td>
-        <td>MERFISH 1,122 유전자<br>CODEX ~50 단백질 마커<br>seqFISH 10,000 유전자</td>
+        <td>MERFISH: 239 절편, 8.4M 세포<br>Slide-seqV2: 84 FOV, ~2M 세포<br>seqFISH: 다수 FOV</td>
+        <td>MERFISH 1,122 유전자<br>seqFISH 10,000 유전자<br>Slide-seqV2 전체 전사체</td>
         <td>뇌, TME</td>
         <td>다세포 모티프 발견<br>FP-Growth 마이닝<br>(Rspo1-Lgr6 L-R pair 예시)</td>
-      </tr>
-      <tr data-platforms="mIF">
-        <td><strong>Cui 2026</strong><br><em>arXiv</em></td>
-        <td>Haiku</td>
-        <td>
-          <span class="badge badge-mif">mIF</span>
-        </td>
-        <td>7,600 mIF 슬라이드<br>62.1M 패치<br>3,218 짝지은 절편<br>1,848 환자</td>
-        <td>120 바이오마커<br>(52개 마커 훈련)</td>
-        <td>11개 장기 유형</td>
-        <td>3중 모달 대조학습<br>(H&E + mIF + 텍스트)</td>
       </tr>
       <tr data-platforms="Visium,Xenium,Visium HD">
         <td><strong>Zhang 2026</strong><br><em>Nat Methods</em></td>
@@ -334,7 +322,7 @@
         <td>12 TCGA 암종</td>
         <td>병리-오믹스<br>다중모달 임베딩</td>
       </tr>
-      <tr data-platforms="Visium HD,Xenium,MERSCOPE,Visium,CODEX,seqFISH,Slide-seqV2,MERFISH">
+      <tr data-platforms="Visium HD,Xenium,MERSCOPE,Visium,seqFISH,Slide-seqV2,MERFISH">
         <td><strong>Chang 2026</strong><br><em>bioRxiv</em></td>
         <td>SCIGMA</td>
         <td>
@@ -342,13 +330,12 @@
           <span class="badge badge-xenium">Xenium Prime</span>
           <span class="badge badge-merscope">MERSCOPE</span>
           <span class="badge badge-visium">Visium</span>
-          <span class="badge badge-codex">CODEX</span>
           <span class="badge badge-seqfish">seqFISH</span>
           <span class="badge badge-slideseq">Slide-seqV2</span>
           <span class="badge badge-merfish">MERFISH</span>
         </td>
         <td>19 데이터셋<br>8 모달리티<br>10 조직 유형<br>1M+ 위치 확장 가능</td>
-        <td>9 플랫폼 지원<br>(플랫폼별 상이)</td>
+        <td>7+ 플랫폼 지원<br>(플랫폼별 상이)</td>
         <td>뇌, 암 (범용)</td>
         <td>공간 다중오믹스 통합<br>위치별 불확실성 정량화</td>
       </tr>
@@ -387,43 +374,42 @@
     <p><strong>특징:</strong> Visium의 고해상도 버전. 세포 수준에 근접한 해상도.</p>
   </div>
   <div class="card">
-    <h2>CODEX</h2>
+    <h2>seqFISH</h2>
     <p><strong>해상도:</strong> 단일세포 수준</p>
-    <p><strong>유형:</strong> 단백질 기반 공간 프로파일링</p>
+    <p><strong>유형:</strong> 순차적 FISH</p>
     <p><strong>사용 논문:</strong> SpatialQuery, SCIGMA</p>
-    <p><strong>특징:</strong> ~50 단백질 마커. SpatialQuery에서 35 환자/258K 세포 분석.</p>
+    <p><strong>특징:</strong> 최대 10,000 유전자 측정 가능. 높은 유전자 수 대비 낮은 처리량.</p>
   </div>
   <div class="card">
-    <h2>mIF (다중면역형광)</h2>
-    <p><strong>해상도:</strong> 단일세포 수준</p>
-    <p><strong>유형:</strong> 단백질 기반 면역 마커</p>
-    <p><strong>사용 논문:</strong> Haiku</p>
-    <p><strong>특징:</strong> 7,600 슬라이드, 120 바이오마커. H&E에서 mIF 마커 예측.</p>
+    <h2>Slide-seqV2</h2>
+    <p><strong>해상도:</strong> ~10 um (bead)</p>
+    <p><strong>유형:</strong> Bead 기반 ST</p>
+    <p><strong>사용 논문:</strong> SpatialQuery, SCIGMA</p>
+    <p><strong>특징:</strong> 전체 전사체 측정. SpatialQuery에서 84 FOV/~2M 세포 분석.</p>
   </div>
 </div>
 
 <footer>
-  Heesun LLM Wiki &mdash; 암 공간전사체 시각화 | 데이터 출처: llm-wiki 수록 7편 논문 (PDF 원문 기반)<br>
+  Heesun LLM Wiki &mdash; 암 공간전사체 시각화 | 데이터 출처: llm-wiki 수록 6편 논문 (PDF 원문 기반, RNA 기반 ST만 포함)<br>
   최종 업데이트: 2026-05-09
 </footer>
 
 <script>
-// Color palette
 const colors = {
   blue: '#38bdf8', purple: '#a78bfa', green: '#34d399',
   orange: '#fb923c', pink: '#f472b6', yellow: '#facc15', cyan: '#67e8f9',
   fuchsia: '#e879f9', lime: '#86efac', amber: '#fcd34d'
 };
 
-// 1. Platform usage chart
+// 1. Platform usage chart (RNA-based only)
 new Chart(document.getElementById('platformChart'), {
   type: 'bar',
   data: {
-    labels: ['Xenium (V1/Prime/5K)', 'Visium', 'Visium HD', 'MERSCOPE', 'MERFISH', 'CODEX', 'seqFISH', 'Slide-seqV2', 'legacy ST', 'mIF'],
+    labels: ['Xenium (V1/Prime/5K)', 'Visium', 'Visium HD', 'MERSCOPE/MERFISH', 'seqFISH', 'Slide-seqV2', 'legacy ST'],
     datasets: [{
       label: '사용 논문 수',
-      data: [5, 3, 3, 3, 2, 2, 2, 2, 1, 1],
-      backgroundColor: [colors.green, colors.blue, colors.yellow, colors.purple, colors.pink, colors.amber, colors.fuchsia, colors.lime, '#6b7280', colors.cyan],
+      data: [5, 3, 3, 3, 2, 2, 1],
+      backgroundColor: [colors.green, colors.blue, colors.yellow, colors.purple, colors.fuchsia, colors.lime, '#6b7280'],
       borderRadius: 6,
       borderSkipped: false,
     }]
@@ -443,10 +429,7 @@ new Chart(document.getElementById('platformChart'), {
               'Spatial EcoTyper, SpatialQuery, SCIGMA',
               'SpatialQuery, SCIGMA',
               'SpatialQuery, SCIGMA',
-              'SpatialQuery, SCIGMA',
-              'SpatialQuery, SCIGMA',
-              'Spatial EcoTyper',
-              'Haiku'
+              'Spatial EcoTyper'
             ];
             return details[ctx.dataIndex];
           }
@@ -464,11 +447,11 @@ new Chart(document.getElementById('platformChart'), {
 new Chart(document.getElementById('sampleChart'), {
   type: 'bar',
   data: {
-    labels: ['Haiku\n(Cui)', 'SpatialQuery\n(An)', 'Spatial\nEcoTyper\n(Zhang)', 'Phoenix\n(Tran)', 'SPLIT\n(Bilous)', 'SCIGMA\n(Chang)'],
+    labels: ['SpatialQuery\n(An)', 'Spatial\nEcoTyper\n(Zhang)', 'Phoenix\n(Tran)', 'SPLIT\n(Bilous)', 'SCIGMA\n(Chang)'],
     datasets: [{
       label: '조직 절편/슬라이드 수',
-      data: [7600, 463, 132, 79, 41, 19],
-      backgroundColor: [colors.cyan, colors.pink, colors.blue, colors.green, colors.orange, colors.amber],
+      data: [323, 132, 79, 41, 19],
+      backgroundColor: [colors.pink, colors.blue, colors.green, colors.orange, colors.amber],
       borderRadius: 6,
       borderSkipped: false,
     }]
@@ -481,12 +464,11 @@ new Chart(document.getElementById('sampleChart'), {
         callbacks: {
           afterLabel: function(ctx) {
             const notes = [
-              '62.1M 패치, 1,848 환자, 11 장기, 120 바이오마커 (mIF)',
-              'MERFISH 239절편/8.4M세포 + CODEX 140FOV/258K세포 + Slide-seqV2 84FOV/~2M세포',
+              'MERFISH 239절편/8.4M세포 + Slide-seqV2 84FOV/~2M세포 (RNA만)',
               '10M+ 공간 전사체, 10 암종, 6 ST 플랫폼, 9 공간 생태형',
               '924 코어, 22.2M 이미지-발현 쌍, 16 장기, 10,000+ 환자 평가',
               '27 기증자, 유방 19 + 폐 22 FFPE, 패널 280-5,000 유전자',
-              '19 데이터셋, 8 모달리티, 10 조직, 9 플랫폼'
+              '19 데이터셋, 8 모달리티, 10 조직, 7+ RNA 플랫폼'
             ];
             return notes[ctx.dataIndex];
           }
@@ -496,10 +478,9 @@ new Chart(document.getElementById('sampleChart'), {
     scales: {
       x: { grid: { display: false }, ticks: { color: '#e2e8f0', font: { size: 10 } } },
       y: {
-        type: 'logarithmic',
         grid: { color: '#1e293b' },
         ticks: { color: '#94a3b8' },
-        title: { display: true, text: '조직 절편/슬라이드 수 (로그 스케일)', color: '#94a3b8' }
+        title: { display: true, text: '조직 절편/슬라이드 수', color: '#94a3b8' }
       }
     }
   }
@@ -512,13 +493,11 @@ new Chart(document.getElementById('resolutionChart'), {
     datasets: [
       { label: 'legacy ST', data: [{ x: 100, y: 1, r: 8 }], backgroundColor: 'rgba(107,114,128,0.6)' },
       { label: 'Visium', data: [{ x: 55, y: 3, r: 14 }], backgroundColor: 'rgba(56,189,248,0.6)' },
+      { label: 'Slide-seqV2', data: [{ x: 10, y: 2, r: 10 }], backgroundColor: 'rgba(134,239,172,0.6)' },
       { label: 'Visium HD', data: [{ x: 8, y: 3, r: 12 }], backgroundColor: 'rgba(250,204,21,0.6)' },
       { label: 'Xenium V1/Prime', data: [{ x: 1, y: 5, r: 16 }], backgroundColor: 'rgba(52,211,153,0.6)' },
       { label: 'MERSCOPE/MERFISH', data: [{ x: 1, y: 3, r: 14 }], backgroundColor: 'rgba(167,139,250,0.6)' },
-      { label: 'CODEX', data: [{ x: 1, y: 2, r: 10 }], backgroundColor: 'rgba(252,211,77,0.6)' },
       { label: 'seqFISH', data: [{ x: 1, y: 2, r: 10 }], backgroundColor: 'rgba(232,121,249,0.6)' },
-      { label: 'Slide-seqV2', data: [{ x: 10, y: 2, r: 10 }], backgroundColor: 'rgba(134,239,172,0.6)' },
-      { label: 'mIF', data: [{ x: 1, y: 1, r: 10 }], backgroundColor: 'rgba(103,232,249,0.6)' },
     ]
   },
   options: {
@@ -551,17 +530,17 @@ new Chart(document.getElementById('resolutionChart'), {
   }
 });
 
-// 4. Gene panel size chart (NEW)
+// 4. Gene panel size chart
 new Chart(document.getElementById('genePanelChart'), {
   type: 'bar',
   data: {
-    labels: ['seqFISH', 'Xenium 5K\nPrime', 'MERFISH\n(SpatialQuery)', 'Phoenix IO\n패널', 'Phoenix\n다조직', 'SPLIT Custom\nIO', 'Phoenix 대장', 'Phoenix 폐', 'Phoenix 유방\n/SPLIT 유방', 'Phoenix 피부', 'Haiku\n바이오마커'],
+    labels: ['seqFISH', 'Xenium 5K Prime', 'MERFISH (SpatialQuery)', 'Phoenix IO 패널', 'Phoenix 다조직/암', 'SPLIT Custom IO', 'Phoenix 대장', 'Phoenix 폐', 'Phoenix 유방/SPLIT 유방', 'Phoenix 피부'],
     datasets: [{
-      label: '유전자/마커 수',
-      data: [10000, 5000, 1122, 380, 377, 340, 322, 289, 280, 260, 120],
+      label: '유전자 수',
+      data: [10000, 5000, 1122, 380, 377, 340, 322, 289, 280, 260],
       backgroundColor: [
         colors.fuchsia, colors.green, colors.pink, colors.orange, colors.orange,
-        colors.orange, colors.green, colors.green, colors.green, colors.green, colors.cyan
+        colors.orange, colors.green, colors.green, colors.green, colors.green
       ],
       borderRadius: 6,
       borderSkipped: false,
@@ -570,15 +549,13 @@ new Chart(document.getElementById('genePanelChart'), {
   options: {
     indexAxis: 'y',
     responsive: true,
-    plugins: {
-      legend: { display: false },
-    },
+    plugins: { legend: { display: false } },
     scales: {
       x: {
         type: 'logarithmic',
         grid: { color: '#1e293b' },
         ticks: { color: '#94a3b8' },
-        title: { display: true, text: '유전자/마커 수 (로그 스케일)', color: '#94a3b8' }
+        title: { display: true, text: '유전자 수 (로그 스케일)', color: '#94a3b8' }
       },
       y: { grid: { display: false }, ticks: { color: '#e2e8f0', font: { size: 10 } } }
     }
@@ -646,15 +623,15 @@ new Chart(document.getElementById('focusChart'), {
   }
 });
 
-// 6. Cell/patch count chart (NEW)
+// 6. Cell count chart (RNA data only)
 new Chart(document.getElementById('cellCountChart'), {
   type: 'bar',
   data: {
-    labels: ['Haiku\n(62.1M 패치)', 'Spatial EcoTyper\n(10M+ 세포)', 'SpatialQuery\nMERFISH\n(8.4M 세포)', 'SpatialQuery\nSlide-seqV2\n(~2M 세포)', 'SpatialQuery\nCODEX\n(258K 세포)'],
+    labels: ['Spatial EcoTyper\n(10M+ 세포)', 'SpatialQuery\nMERFISH\n(8.4M 세포)', 'SpatialQuery\nSlide-seqV2\n(~2M 세포)'],
     datasets: [{
-      label: '세포/패치 수',
-      data: [62100000, 10000000, 8400000, 2000000, 258000],
-      backgroundColor: [colors.cyan, colors.blue, colors.pink, colors.lime, colors.amber],
+      label: '세포 수',
+      data: [10000000, 8400000, 2000000],
+      backgroundColor: [colors.blue, colors.pink, colors.lime],
       borderRadius: 6,
       borderSkipped: false,
     }]
@@ -675,7 +652,7 @@ new Chart(document.getElementById('cellCountChart'), {
             return v;
           }
         },
-        title: { display: true, text: '세포/패치 수 (로그 스케일)', color: '#94a3b8' }
+        title: { display: true, text: '세포 수 (로그 스케일)', color: '#94a3b8' }
       }
     }
   }
