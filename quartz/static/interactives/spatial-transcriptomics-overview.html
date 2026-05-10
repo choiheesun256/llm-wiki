@@ -277,6 +277,8 @@ a:hover { text-decoration: underline; }
   font-size: 13px; color: var(--muted); line-height: 1.75;
 }
 .foot strong { color: var(--ink-soft); font-weight: 700; }
+.foot { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; }
+.foot .right { font-family: var(--f-mono); font-size: 12px; }
 
 /* ---- RESPONSIVE ---- */
 @media (max-width: 1000px) {
@@ -300,7 +302,7 @@ a:hover { text-decoration: underline; }
 <header class="hero">
   <div class="brand">
     <span class="brand-dot" aria-hidden="true"></span>
-    <span><strong>llm-wiki</strong> &middot; cancer spatial transcriptomics</span>
+    <span><strong>최희선</strong> &middot; cancer spatial transcriptomics</span>
   </div>
   <h1>암 &times; 공간전사체 <span class="accent">랜드스케이프</span></h1>
   <p class="lede">
@@ -459,8 +461,14 @@ a:hover { text-decoration: underline; }
 
 <!-- FOOTER -->
 <footer class="foot">
-  <strong>Heesun LLM Wiki</strong> &middot; 암 공간전사체 시각화<br>
-  데이터 출처: llm-wiki 수록 10편 논문 (PDF 원문, 암 + RNA 기반 ST만 포함) &middot; 2026-05-10
+  <div>
+    <strong>작성자: 최희선</strong> &middot; 고려대 인간유전체 연구실<br>
+    암 조직 RNA 공간전사체 플랫폼, 샘플 규모, L-R 분석 현황을 10편 논문 기반으로 정리한 인터랙티브 시각화<br>
+    데이터 출처: 공개 문헌 PDF 원문 (암 + RNA 기반 ST만 포함) &middot; 2026-05-10
+  </div>
+  <div class="right">
+    <a href="https://choiheesun256.github.io/LLM-wiki/">← LLM-wiki index</a>
+  </div>
 </footer>
 
 </div>
