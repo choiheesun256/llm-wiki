@@ -347,6 +347,16 @@ a:hover { text-decoration: underline; }
   <p class="section-blurb">3편의 논문에서 체계적인 L-R pair 분석을 수행했습니다. 공간전사체 데이터에서 niche별, 암종별 세포간 통신 회로가 어떻게 밝혀졌는지 정리합니다.</p>
   <div class="cards cards-2">
     <div class="card" style="--tc: var(--lr); --tc-glow: var(--lr-glow); --tc-tint: var(--lr-tint);">
+      <h2>주요 L-R pair &times; 논문 매핑</h2>
+      <div class="chart-container"><canvas id="lrChart"></canvas></div>
+    </div>
+    <div class="card" style="--tc: var(--lr); --tc-glow: var(--lr-glow); --tc-tint: var(--lr-tint);">
+      <h2>L-R 분석 도구 비교</h2>
+      <div class="chart-container"><canvas id="lrToolChart"></canvas></div>
+    </div>
+  </div>
+  <div class="cards" style="margin-top:16px;">
+    <div class="card" style="--tc: var(--lr); --tc-glow: var(--lr-glow); --tc-tint: var(--lr-tint);">
       <h2>논문별 L-R 분석 요약</h2>
       <div style="overflow-x:auto;">
       <table class="lr-table">
@@ -379,10 +389,6 @@ a:hover { text-decoration: underline; }
         </tbody>
       </table>
       </div>
-    </div>
-    <div class="card" style="--tc: var(--lr); --tc-glow: var(--lr-glow); --tc-tint: var(--lr-tint);">
-      <h2>주요 L-R pair &times; 논문 매핑</h2>
-      <div class="chart-container"><canvas id="lrChart"></canvas></div>
     </div>
   </div>
   <div class="note">
@@ -550,6 +556,17 @@ new Chart(document.getElementById('lrChart'), {
       { label: 'FineST', data: [0,0,0,0,0,0,0,0,1,1], backgroundColor: colors.violetA, borderColor: colors.violet, borderWidth: 1, borderRadius: 6 },
     ]
   }, options: { responsive: true, plugins: { legend: { labels: { font: { size: 9 }, usePointStyle: true }, position: 'bottom' } }, scales: { x: { stacked: true, grid: { display: false }, ticks: { font: { size: 8, weight: '600', family: 'var(--f-mono)' }, maxRotation: 0 } }, y: { stacked: true, grid: { color: gridColor }, ticks: { stepSize: 1 }, title: { display: true, text: '보고 논문 수' } } } }
+});
+
+// 8. L-R Tool comparison
+new Chart(document.getElementById('lrToolChart'), {
+  type: 'bar', data: {
+    labels: ['CellChat', 'FineST', 'stLearn', 'LR score\n(meta)', 'SpatialDM', 'NicheNet'],
+    datasets: [
+      { label: '사용 논문 수', data: [2,1,1,1,0,0], backgroundColor: colors.coralA, borderColor: colors.coral, borderWidth: 1.5, borderRadius: 10, borderSkipped: false },
+      { label: '지원 L-R DB 크기', data: [3,3,2,2,2,1], backgroundColor: colors.violetA, borderColor: colors.violet, borderWidth: 1.5, borderRadius: 10, borderSkipped: false },
+    ]
+  }, options: { responsive: true, plugins: { legend: { labels: { font: { size: 9 }, usePointStyle: true }, position: 'bottom' } }, scales: { x: { grid: { display: false }, ticks: { font: { size: 9, weight: '600' } } }, y: { grid: { color: gridColor }, ticks: { stepSize: 1 }, title: { display: true, text: '점수' } } } }
 });
 
 // Filter
