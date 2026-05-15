@@ -7,106 +7,105 @@ draft: false
 
 ## Big Picture
 
-The Clinical Proteomic Tumor Analysis Consortium (CPTAC) has produced the most comprehensive multi-omics characterization of human tumors to date — integrating genomics, transcriptomics, proteomics, phosphoproteomics, acetylomics, ubiquitylomics, and metabolomics across thousands of tumors and 14 cancer types. The central finding across all studies: **protein-level biology frequently diverges from genomic/transcriptomic predictions**, revealing therapeutic vulnerabilities invisible to DNA/RNA analysis alone.
+Clinical Proteomic Tumor Analysis Consortium(CPTAC)은 genomics, transcriptomics, proteomics, phosphoproteomics, acetylomics, ubiquitylomics, metabolomics를 수천 개 종양과 14개 암종에 걸쳐 통합한, 현재까지 가장 포괄적인 종양 multi-omics 특성화를 수행했다. 모든 연구를 관통하는 핵심 발견: **단백질 수준의 생물학은 유전체/전사체 예측과 자주 괴리되며**, DNA/RNA 분석만으로는 보이지 않는 치료 표적과 취약점을 드러낸다.
 
-## Key Concepts
+## 핵심 개념
 
-**CNA buffering** — Copy number amplifications/deletions often do not propagate linearly to protein levels. The ubiquitin-proteasome system degrades excess protein, and translational regulation buffers mRNA changes. Only ~32% of genes show significant mRNA-protein correlation in some cancer types.
+**CNA buffering** — 복제수 증폭/결실이 단백질 수준으로 선형 전달되지 않는 경우가 많다. Ubiquitin-proteasome 시스템이 과잉 단백질을 분해하고, 번역 조절이 mRNA 변화를 완충한다. 일부 암종에서는 유전자의 32%만이 유의미한 mRNA-단백질 상관을 보인다.
 
-**Proteogenomic subtypes** — NMF clustering of proteomic data frequently reveals subtypes invisible to transcriptomics: novel EMT/poor-prognosis clusters, hidden heterogeneity within established subtypes (e.g., PAM50 LumA subdivisions).
+**Proteogenomic 아형** — 단백질체 NMF 클러스터링은 전사체로는 보이지 않는 아형을 자주 드러낸다: 새로운 EMT/불량 예후 클러스터, 기존 아형 내 숨겨진 이질성.
 
-**Phospho-signatures** — Functional readouts at the phosphoprotein level identify actionable pathway activations (e.g., PTPN11 Y62 in EGFR-mutant lung cancer) that genomics alone cannot predict.
+**Phospho-signature** — 인산화 단백질 수준의 기능적 판독이 실행 가능한 경로 활성화를 식별한다. 유전체만으로는 예측 불가.
 
-## Paper-by-Paper (Chronological)
+## 논문별 정리 (시간순)
 
-### Zhang 2014 — Colorectal cancer (foundational)
+### Zhang 2014 — 대장직장암 (기초)
 → [[cancer/zhang-2014-proteogenomic-characterization-colon-rectal-cancer]]
 
-The first CPTAC study (95 CRC tumors). Key findings: only 32% of genes show significant mRNA-protein correlation; 5 proteomic subtypes were identified, including a novel EMT/poor-prognosis cluster (C) without transcriptomic precedent. HNF4A, TOMM34, SRC were identified as candidate 20q amplicon drivers. This paper established the foundational principle of mRNA-protein discordance at scale.
+최초의 CPTAC 연구 (95개 CRC 종양). 유전자의 32%만 유의미한 mRNA-단백질 상관. 5개 proteomic 아형 식별, 전사체에 선례 없는 EMT/불량예후 클러스터(C) 포함. **대규모 mRNA-단백질 불일치의 원칙**을 확립한 논문.
 
-### Mertins 2016 — Breast cancer (foundational)
+### Mertins 2016 — 유방암 (기초)
 → [[cancer/mertins-2016-proteogenomics-connects-somatic-mutations-signalling]]
 
-77 TCGA breast tumors. CNA trans-effects are heavily buffered at protein level (13% significant vs. 68% at mRNA). PIK3CA and TP53 phospho-signatures identified for the first time. CDK12, PAK1, TLK2, RIPK2 emerged as amplicon-driven actionable kinase targets. This paper connected somatic mutations to functional signaling consequences at protein level.
+77개 TCGA 유방 종양. CNA trans-effect가 단백질 수준에서 크게 완충(13% 유의미 vs. mRNA 68%). PIK3CA, TP53 phospho-signature 최초 식별. CDK12, PAK1, TLK2, RIPK2가 amplicon 구동 실행 가능 kinase 표적으로 등장.
 
-### Zhang 2016 — Ovarian cancer (HGSOC)
+### Zhang 2016 — 난소암 (HGSOC)
 → [[cancer/zhang-2016-integrated-proteogenomic-characterization-human-high-grade]]
 
-174 HGSOC tumors. CNA trans-effects converge on invasion and immunity programs. Histone H4 K12/K16 dual acetylation marks HRD tumors. PDGFRβ/RhoA phospho-pathways associated with poor survival — invisible at transcriptomics level. First CPTAC cancer type beyond breast cancer.
+174개 HGSOC 종양. Histone H4 K12/K16 이중 아세틸화가 HRD 종양을 표시. PDGFRβ/RhoA phospho-경로가 나쁜 생존과 연관 — 전사체에서는 보이지 않는 신호.
 
-### Gillette 2019 — Breast cancer (Oslo2 cohort)
+### Gillette 2019 — 유방암 (Oslo2 코호트)
 → [[cancer/gillette-2019-breast-cancer-quantitative-proteome-proteogenomic-landscape]]
 
-45 breast tumors using HiRIEF-LC-MS. First proteome-level recapitulation of PAM50 subtypes. 388 novel non-coding peptides identified, with 116 as MHC class I neoantigen candidates. Complements CPTAC BRCA with European population data and demonstrates proteogenomic neoantigen discovery.
+45개 유방 종양, HiRIEF-LC-MS. 단백질체 수준에서 PAM50 아형 최초 재현. 388개 신규 비-코딩 펩타이드 식별, 116개가 MHC class I neoantigen 후보.
 
-### Vasaikar 2019 — Colon cancer (prospective)
+### Vasaikar 2019 — 대장암 (전향적)
 → [[cancer/vasaikar-2019-proteogenomic-analysis-human-colon-cancer]]
 
-110 prospective colon tumors. The RB1 amplification paradox: CDK2-driven Rb hyperphosphorylation acts as an oncogenic driver (not a tumor suppressor gain). MSI-H tumors show glycolysis upregulation that negatively correlates with CD8+ T cell infiltration. Cancer-testis antigen IGF2BP3 expressed in 78% of all tumors. CNA copy number alone misrepresents functional biology.
+110명 전향적 대장 코호트. RB1 증폭 역설: CDK2 구동 Rb 과인산화가 종양 억제가 아닌 발암 드라이버로 작용. MSI-H 종양의 당분해 상향조절이 CD8+ T 세포 침윤과 음의 상관. CNA 복제수만으로는 기능적 생물학을 잘못 표현한다.
 
-### Krug 2020 — Breast cancer (prospective CPTAC)
+### Krug 2020 — 유방암 (전향적 CPTAC)
 → [[cancer/krug-2020-proteogenomic-landscape-breast-cancer-tumorigenesis]]
 
-122 prospective tumors (proteome + phosphoproteome + acetylome). NMF clustering reveals hidden biology within PAM50 LumA. Proteomics corrects ERBB2 diagnostic status in ambiguous IHC/FISH cases. Rb protein levels predict CDK4/6i response beyond RB1 genotype. Acetylome identifies subtype-specific pathway activations in TNBC and HER2+.
+122개 전향적 종양. PAM50 LumA 내 숨겨진 생물학을 발견. 단백질체가 모호한 IHC/FISH 사례에서 ERBB2 진단 상태를 교정. Rb 단백질 수준이 RB1 유전형을 넘어 CDK4/6i 반응을 예측.
 
-### Gillette 2020 — Lung adenocarcinoma
+### Gillette 2020 — 폐선암
 → [[cancer/gillette-2020-proteogenomic-characterization-reveals-therapeutic-vulnerabilities]]
 
-110 LUAD tumors. Key phosphoproteomic findings:
-- PTPN11 Y62 hyperphosphorylated exclusively in EGFR-mutant tumors
-- SOS1 S1161 hyperphosphorylated in KRAS-mutant tumors
-- STK11 immune-cold phenotype driven by neutrophil degranulation (protein-level-only signal)
-Four NMF multi-omics clusters with distinct biology; drug targets invisible to genomics/transcriptomics alone.
+110개 LUAD 종양. 핵심 phosphoproteomic 발견:
+- PTPN11 Y62가 EGFR 변이 종양에서만 과인산화
+- SOS1 S1161이 KRAS 변이 종양에서만 과인산화
+- STK11 immune-cold 표현형이 호중구 탈과립에 의해 구동 (단백질 수준 전용 신호)
 
-### Wang 2021 — Glioblastoma
+### Wang 2021 — 교모세포종
 → [[cancer/wang-2021-proteogenomic-metabolomic-characterization-human-glioblastoma]]
 
-99 GBM tumors with 10 modalities including snRNA-seq + lipidome/metabolome. PTPN11/PLCG1 phosphorylation is a convergent RTK signaling hub downstream of EGFR/PDGFRA. Tumor-intrinsic EMT in mesenchymal GBM confirmed by snRNA-seq. Mesenchymal GBMs enriched in ferroptosis-related lipid species. Most data-rich CPTAC study to date.
+99개 GBM 종양, snRNA-seq + lipidome/metabolome 포함 10개 modality. PTPN11/PLCG1 인산화가 수렴적 RTK 신호 허브. Mesenchymal GBM에서 종양 고유 EMT와 ferroptosis 관련 지질 종 풍부. 가장 데이터 밀도가 높은 CPTAC 연구.
 
-### Satpathy 2021 — Lung squamous cell carcinoma
+### Satpathy 2021 — 폐편평세포암
 → [[cancer/satpathy-2021-proteogenomic-portrait-lung-squamous-cell]]
 
-108 LSCC tumors (9 data types). NSD3 (not FGFR1) identified as the true driver of the commonly amplified 8p11.23 locus by multi-omics evidence. Phospho-Rb identified as a functional CDK4/6i response biomarker superior to RB1 genotype. First large-scale ubiquitylome and acetylome in LSCC.
+108개 LSCC 종양. 8p11.23 좌위의 진정한 드라이버가 FGFR1이 아닌 **NSD3**임을 multi-omics로 식별. Phospho-Rb가 RB1 유전형보다 우수한 CDK4/6i 반응 바이오마커. LSCC 최초의 대규모 ubiquitylome 및 acetylome.
 
-### Zhang 2022 — Pan-cancer compendium
+### Zhang 2022 — 범암 대규모 자원
 → [[cancer/zhang-2022-proteogenomic-characterization-2002-human-cancers]]
 
-2,002 tumors across 14 cancer types — the largest CPTAC resource. 11 pan-cancer proteome subtypes. 12 noncanonical MYC pathway activators (ARID1A, PTEN, RB1, SMARCA4, etc.) without direct MYC amplification. Striking finding: the canonical TP53 target signature is detectable at transcriptomic but not proteomic level — highlighting the limits of transcript-based pathway analysis.
+14개 암종 2,002개 종양 — 최대 CPTAC 자원. 11개 범암 proteome 아형. 12개 비정규 MYC 경로 활성화자(ARID1A, PTEN, RB1 등)가 직접적 MYC 증폭 없이 작동. 정규 TP53 표적 signature가 전사체에서는 검출되지만 **단백질체에서는 검출 불가**.
 
-### Li 2023 — Pan-cancer oncogenic drivers
+### Li 2023 — 범암 발암 드라이버
 → [[cancer/li-2023-pan-cancer-proteogenomics-connects-oncogenic-drivers]]
 
-1,064 tumors across 10 types. 265 pan-cancer cis-events. KEAP1/NFE2L2 mutations have the most conserved trans-effects across cancers. EGFR/STK11 are the most divergent (potential synthetic lethal candidates). PLOD2 as a pan-cancer prognostic biomarker. RB1 alterations imply CDK2 (not CDK4/6) dependency — informing CDK inhibitor selection.
+10개 암종 1,064개 종양. KEAP1/NFE2L2 변이가 암종 간 가장 보존된 trans-effect. EGFR/STK11이 가장 divergent (합성치사 후보). RB1 변이가 CDK4/6이 아닌 **CDK2 의존성**을 함의 — CDK 억제제 선택에 정보를 제공.
 
-## The CPTAC Principle
+## CPTAC 원칙
 
 ```
-Genomics        → "What mutations are present?"
-Transcriptomics → "What genes are expressed?"
-    ↕ (often discordant — CNA buffering, post-transcriptional regulation)
-Proteomics      → "What proteins are actually there?"
-Phosphoproteomics → "Which signaling pathways are actually active?"
+Genomics        → "어떤 변이가 있는가?"
+Transcriptomics → "어떤 유전자가 발현되는가?"
+    ↕ (자주 불일치 — CNA buffering, 번역후 조절)
+Proteomics      → "어떤 단백질이 실제로 존재하는가?"
+Phosphoproteomics → "어떤 신호 경로가 실제로 활성인가?"
 ```
 
-**The gap between layers is not noise — it is biology.**
+**레이어 간 간극은 잡음이 아니라 생물학이다.**
 
-## Cross-Study Themes
+## 교차 연구 테마
 
-| Theme | Studies | Finding |
-|-------|---------|---------|
-| CNA buffering | All | mRNA-protein discordance is pervasive (13–68% genes buffered) |
-| Phospho-Rb as biomarker | Krug 2020, Satpathy 2021, Vasaikar 2019 | Protein Rb/phospho-Rb predicts CDK4/6i response better than RB1 genotype |
-| PTPN11 as RTK hub | Gillette 2020, Wang 2021 | Convergent phospho-signal in EGFR-mutant lung and GBM |
-| Novel proteomic subtypes | Zhang 2014, Krug 2020, Wang 2021 | Subtypes invisible to transcriptomics alone |
-| TP53 protein-level disconnect | Zhang 2022 | TP53 transcriptional signature not reflected in proteome |
+| 테마 | 연구 | 발견 |
+|------|------|------|
+| CNA buffering | 전체 | mRNA-단백질 불일치가 만연 |
+| Phospho-Rb 바이오마커 | Krug 2020, Satpathy 2021, Vasaikar 2019 | RB1 유전형보다 CDK4/6i 반응 예측 우수 |
+| PTPN11 RTK 허브 | Gillette 2020, Wang 2021 | EGFR 변이 폐, GBM에서 수렴적 신호 |
+| 신규 proteomic 아형 | Zhang 2014, Krug 2020, Wang 2021 | 전사체만으로는 보이지 않는 아형 |
+| TP53 단백질 수준 단절 | Zhang 2022 | TP53 전사 signature가 proteome에 반영 안 됨 |
 
-## Connections
+## Day 간 연결
 
-- **Day 5**: CDK4/6 and phospho-Rb biomarkers in CPTAC studies connect CDK biology to clinical proteogenomics
-- **Day 6**: Phosphoproteomics methods (benchmarKIN, MSstatsPTM, CoPheeMap) are the analytical tools applied to CPTAC data
-- **Day 3**: PTPN11 Y62 in EGFR-mutant tumors provides a phospho-level understanding of EGFR-driven signaling
-- **Day 1**: HRD signatures (histone acetylation marks) in HGSOC proteogenomics connect to BRCA/PARP biology
+- **Day 5**: CDK4/6과 phospho-Rb 바이오마커가 CDK 생물학과 연결
+- **Day 6**: Phosphoproteomics 방법론이 CPTAC 데이터에 적용되는 분석 도구
+- **Day 3**: EGFR 변이 종양의 PTPN11 Y62가 EGFR 구동 신호전달의 phospho 수준 이해를 제공
+- **Day 1**: HGSOC proteogenomics에서 HRD signature가 BRCA/PARP 생물학과 연결
 
-## Key Takeaway
+## 핵심 메시지
 
-CPTAC demonstrates that genomics and transcriptomics are necessary but insufficient for understanding cancer biology. Protein-level measurements reveal CNA buffering, hidden subtypes, functional phospho-biomarkers, and drug targets invisible to DNA/RNA. The practical implications: clinical trials should integrate proteomics for biomarker-driven patient stratification, and preclinical research should validate genomic findings at protein level before pursuing therapeutic strategies.
+CPTAC은 genomics와 transcriptomics가 필요하지만 충분하지 않음을 보여준다. 단백질 수준 측정이 CNA buffering, 숨겨진 아형, 기능적 phospho-바이오마커, DNA/RNA에서 보이지 않는 약물 표적을 드러낸다. 임상시험은 proteomics를 통합해야 하고, 전임상 연구는 유전체 발견을 단백질 수준에서 검증해야 한다.
