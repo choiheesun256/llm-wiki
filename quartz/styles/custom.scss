@@ -7,71 +7,228 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* ── Stats row ── */
+.stats-row {
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+  margin: 1.2rem 0 1.8rem;
+  justify-content: center;
+
+  .stat {
+    text-align: center;
+    padding: 0.8rem 1.8rem;
+    position: relative;
+
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 20%;
+      height: 60%;
+      width: 1px;
+      background: var(--lightgray);
+    }
+
+    .stat-num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--secondary);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-label {
+      font-size: 0.72rem;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 0.2rem;
+    }
+  }
+}
+
 /* ── Card grid for homepage ── */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.2rem;
   margin: 1.2rem 0;
 }
 
 .card {
   border: 1px solid var(--lightgray);
-  border-radius: 8px;
-  padding: 1rem 1.2rem;
-  transition: transform 0.15s, border-color 0.15s;
+  border-radius: 12px;
+  padding: 1.4rem 1.6rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  background: var(--light);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary), var(--tertiary));
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
 
   &:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     border-color: var(--secondary);
+
+    &::before {
+      opacity: 1;
+    }
   }
 
   h3 {
-    margin: 0 0 0.4rem;
-    font-size: 1.05rem;
+    margin: 0.2rem 0 0.6rem;
+    font-size: 1.08rem;
+    line-height: 1.3;
+  }
+
+  p, strong {
+    font-size: 0.88rem;
   }
 
   p {
-    margin: 0;
-    font-size: 0.88rem;
+    margin: 0.3rem 0;
     color: var(--darkgray);
+    line-height: 1.5;
+  }
+
+  strong {
+    display: inline-block;
+    margin-top: 0.6rem;
+    color: var(--dark);
+    font-size: 0.82rem;
+    letter-spacing: 0.01em;
   }
 
   ul {
-    margin: 0.5rem 0 0;
+    margin: 0.4rem 0 0.2rem;
     padding-left: 1.2rem;
-    font-size: 0.85rem;
+    font-size: 0.84rem;
+    line-height: 1.6;
+
+    li {
+      margin-bottom: 0.15rem;
+    }
   }
 
+  /* Badge */
   .card-badge {
     display: inline-block;
-    font-size: 0.72rem;
-    padding: 0.15rem 0.5rem;
-    border-radius: 4px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
     background: var(--secondary);
     color: var(--light);
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .badge-cancer {
+    background: linear-gradient(135deg, #c0392b, #e74c3c);
   }
 }
 
-.stats-row {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  margin: 0.8rem 0 1.2rem;
+/* ── First card (Q&A) spans full width ── */
+.card-grid > .card:first-child {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0 2rem;
+  align-content: start;
 
-  .stat {
-    text-align: center;
+  /* Badge and title span full width */
+  > .card-badge,
+  > h3 {
+    grid-column: 1 / -1;
+  }
+
+  > p, > strong {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ── Second card (논문 카테고리) ── */
+.card-grid > .card:nth-child(2) {
+  h3 {
+    margin-bottom: 0.8rem;
+  }
+
+  p {
+    font-size: 0.82rem;
+    margin: 0.15rem 0;
+    line-height: 1.5;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  strong {
+    color: var(--secondary);
+    font-size: 0.85rem;
+  }
+}
+
+/* ── Q&A section headers inside first card ── */
+.card-grid > .card:first-child strong {
+  color: var(--secondary);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--lightgray);
+  padding-bottom: 0.3rem;
+  margin-top: 1rem;
+  margin-bottom: 0.2rem;
+  width: 100%;
+}
+
+/* ── Lede text below title ── */
+.card-grid > .card:first-child > p:first-of-type {
+  grid-column: 1 / -1;
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-bottom: 0.5rem;
+}
+
+/* ── Smooth link styling inside cards ── */
+.card a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    border-bottom-color: var(--secondary);
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid > .card:first-child {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-row .stat {
+    padding: 0.6rem 1.2rem;
 
     .stat-num {
       font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--secondary);
-    }
-
-    .stat-label {
-      font-size: 0.78rem;
-      color: var(--gray);
     }
   }
 }
