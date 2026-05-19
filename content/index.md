@@ -22,32 +22,49 @@ title: Heesun LLM wiki
 <div class="card card-hero">
 <span class="card-badge badge-cancer">Q&A Hub</span>
 
-### 논문 기반 Q&A
+### 논문 기반 질문-답변
+
+<div class="qa-cols">
+<div>
 
 **Proteogenomics**
-- [[proteogenomics-cohort-landscape|암종별 코호트 현황]]
-- [[multi-omics-integration-cancer-subtypes|분자 아형과 임상적 의미]]
-- [[rare-cancer-proteogenomics|희귀암 연구 현황]]
+- [[proteogenomics-cohort-landscape|코호트 현황]]
+- [[multi-omics-integration-cancer-subtypes|분자 아형]]
+- [[rare-cancer-proteogenomics|희귀암]]
 
 **Drug Resistance**
-- [[egfr-resistance-mechanisms-landscape|EGFR TKI 내성]]
-- [[parp-inhibitor-resistance-mechanisms|PARPi 내성과 극복]]
-- [[kras-mutant-cancer-therapeutic-strategies|KRAS 변이 치료 전략]]
+- [[egfr-resistance-mechanisms-landscape|EGFR TKI]]
+- [[parp-inhibitor-resistance-mechanisms|PARPi]]
+- [[kras-mutant-cancer-therapeutic-strategies|KRAS]]
+
+</div>
+<div>
 
 **Immunity & TME**
-- [[immune-evasion-mechanisms-cancer|면역 회피 메커니즘]]
+- [[immune-evasion-mechanisms-cancer|면역 회피]]
 - [[tumor-microenvironment-spatial-organization|TME 공간 구조]]
-- [[ptm-immune-checkpoint-regulation|PTM Checkpoint 조절]]
+- [[ptm-immune-checkpoint-regulation|PTM Checkpoint]]
 
-**Methods**
-- [[spatial-transcriptomics-cancer-applications|Spatial Transcriptomics]]
-- [[phosphoproteomics-kinase-activity-methods|Kinase Activity 추론]]
-- [[ai-models-cancer-diagnosis-prediction|AI 암 진단·예측]]
+**Methods & Tools**
+- [[spatial-transcriptomics-cancer-applications|Spatial TX]]
+- [[phosphoproteomics-kinase-activity-methods|Kinase Activity]]
+- [[ai-models-cancer-diagnosis-prediction|AI 진단]]
 - [[proteogenomics-bioinformatics-tools|분석 도구]]
 
+</div>
+<div>
+
 **Cancer Deep Dive**
-- [[breast-cancer-proteogenomics-subtypes|유방암]] · [[pancreatic-cancer-molecular-landscape|췌장암]] · [[colorectal-cancer-proteogenomics-immunotherapy|대장암]] · [[prostate-cancer-neuroendocrine-transition|전립선암]]
-- [[ecdna-cancer-evolution-resistance|ecDNA]] · [[emt-drug-resistance-immune-evasion|EMT]] · [[network-medicine-drug-repurposing-cancer|Drug Repurposing]]
+- [[breast-cancer-proteogenomics-subtypes|유방암]]
+- [[pancreatic-cancer-molecular-landscape|췌장암]]
+- [[colorectal-cancer-proteogenomics-immunotherapy|대장암]]
+- [[prostate-cancer-neuroendocrine-transition|전립선암]]
+- [[ecdna-cancer-evolution-resistance|ecDNA]]
+- [[emt-drug-resistance-immune-evasion|EMT]]
+- [[network-medicine-drug-repurposing-cancer|Drug Repurposing]]
+
+</div>
+</div>
 
 </div>
 
@@ -60,10 +77,10 @@ title: Heesun LLM wiki
 | Cancer Biology | 93 |
 | Proteogenomics | 43 |
 | Drug Resistance | 36 |
-| Spatial Transcriptomics | 19 |
-| AI / Deep Learning | 15 |
+| Spatial TX | 19 |
+| AI / DL | 15 |
 | Multi-omics | 11 |
-| Bioinformatics Tools | 10 |
+| Tools | 10 |
 | Immune Evasion | 8 |
 | Others | 40 |
 
@@ -73,8 +90,8 @@ title: Heesun LLM wiki
 
 ### 프로젝트
 
-- **[[annForce]]** — Perturbation force field 모델
-- **[[drug-repurposing|Drug Repurposing]]** — Network medicine 약물 재배치
+- **[[annForce]]** — Perturbation force field
+- **[[drug-repurposing|Drug Repurposing]]** — Network medicine
 - **[[vital-digital-cell|VITAL Digital Cell]]** — Single-cell FM
 - **[[nrl-target-discovery|NRL Target Discovery]]** — 표적 발굴
 
@@ -82,13 +99,13 @@ title: Heesun LLM wiki
 
 <div class="card">
 
-### 주요 개념
+### 개념
 
 - [[network-medicine|Network Medicine]]
 - [[spatial-ai-for-cancer|Spatial AI]]
 - [[perturbation-modeling|Perturbation Modeling]]
 - [[single-cell-foundation-models|scFM]]
-- [[diffusion-transformers|Diffusion Transformers]]
+- [[diffusion-transformers|DiT]]
 
 </div>
 
