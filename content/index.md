@@ -4,36 +4,106 @@ title: Heesun LLM wiki
 
 <div class="stats-row">
   <div class="stat">
-    <div class="stat-num">5</div>
-    <div class="stat-label">프로젝트</div>
+    <div class="stat-num">275</div>
+    <div class="stat-label">논문</div>
   </div>
   <div class="stat">
-    <div class="stat-num">52</div>
-    <div class="stat-label">논문</div>
+    <div class="stat-num">20</div>
+    <div class="stat-label">Q&A</div>
   </div>
   <div class="stat">
     <div class="stat-num">21</div>
     <div class="stat-label">개념</div>
   </div>
   <div class="stat">
-    <div class="stat-num">2</div>
-    <div class="stat-label">비교</div>
+    <div class="stat-num">5</div>
+    <div class="stat-label">프로젝트</div>
   </div>
 </div>
 
 <div class="card-grid">
 
 <div class="card">
-<span class="card-badge">리뷰</span>
+<span class="card-badge badge-cancer">Q&A 핵심</span>
 
-### [[notion-literature-review-2026-05-07|Notion Review 2026-05-07]]
+### 위키 Q&A — 논문 기반 답변
 
-Notion 프로젝트별 참고 논문 허브를 읽고 암, 싱글셀, 공간전사체, ML/DL 중심으로 선별한 업데이트
+275개 논문을 cross-reference하여 생성한 질문-답변 페이지
 
-- [[spatial-ai-for-cancer|Spatial AI for Cancer]]
-- [[single-cell-foundation-models|Single-Cell Foundation Models]]
-- [[vital-digital-cell|VITAL Digital Cell]]
-- [[nrl-target-discovery|NRL Target Discovery]]
+**Proteogenomics & Multi-omics**
+
+- [[proteogenomics-cohort-landscape|암종별 Proteogenomics 코호트 현황]]
+- [[multi-omics-integration-cancer-subtypes|Multi-omics 분자 아형과 임상적 의미]]
+- [[rare-cancer-proteogenomics|희귀암 Proteogenomics 연구 현황]]
+
+**약물 내성**
+
+- [[egfr-resistance-mechanisms-landscape|EGFR TKI (osimertinib) 내성 메커니즘]]
+- [[parp-inhibitor-resistance-mechanisms|PARP inhibitor 내성과 극복 전략]]
+- [[kras-mutant-cancer-therapeutic-strategies|KRAS 변이 암 치료 전략]]
+
+**면역 & TME**
+
+- [[immune-evasion-mechanisms-cancer|암세포 면역 회피 메커니즘]]
+- [[ptm-immune-checkpoint-regulation|PTM의 Immune Checkpoint 조절]]
+- [[tumor-microenvironment-spatial-organization|TME 공간적 구조와 치료 반응]]
+
+**기술 & 방법론**
+
+- [[spatial-transcriptomics-cancer-applications|Spatial Transcriptomics 암 연구 적용]]
+- [[phosphoproteomics-kinase-activity-methods|Phosphoproteomics Kinase Activity 추론법]]
+- [[ai-models-cancer-diagnosis-prediction|AI/DL 암 진단 및 예후 예측 모델]]
+- [[proteogenomics-bioinformatics-tools|Proteogenomics 생물정보학 도구]]
+- [[network-medicine-drug-repurposing-cancer|Network Medicine 약물 재배치]]
+
+**암종별 심층 분석**
+
+- [[breast-cancer-proteogenomics-subtypes|유방암 Proteogenomic 아형]]
+- [[pancreatic-cancer-molecular-landscape|췌장암 분자 landscape]]
+- [[prostate-cancer-neuroendocrine-transition|전립선암 신경내분비 분화]]
+- [[colorectal-cancer-proteogenomics-immunotherapy|대장암 Proteogenomics & 면역치료]]
+
+**생물학적 메커니즘**
+
+- [[emt-drug-resistance-immune-evasion|EMT와 약물 내성/면역 회피]]
+- [[ecdna-cancer-evolution-resistance|ecDNA와 암 진화/치료 내성]]
+
+</div>
+
+<div class="card">
+<span class="card-badge badge-cancer">논문 카테고리</span>
+
+### 소스 논문 (275편)
+
+**암 생물학 (93)**
+cancer-biology — 일반 암 생물학, 종양 진화, 대사
+
+**Proteogenomics (43)**
+CPTAC, APOLLO, 아시아 코호트 등 대규모 멀티오믹스
+
+**약물 내성 (36)**
+EGFR TKI, PARPi, KRAS G12Ci, 내분비 치료 내성
+
+**Spatial Transcriptomics (19)**
+Visium, Xenium, GeoMx, virtual ST, deconvolution
+
+**AI/DL 모델링 (15)**
+병리 AI, spatial AI, single-cell DL, multimodal fusion
+
+**Multi-omics (11)**
+통합 오믹스, pan-cancer 분석
+
+**Bioinformatics 도구 (10)**
+cProSite, iProPhos, KSEA, RoKAI, limma
+
+**면역 회피 (8)**
+PD-L1/PD-L2, MHC-I, checkpoint PTM 조절
+
+**Single-cell (6)**
+scRNA-seq, Perturb-seq, spatial single-cell
+
+**기타**
+phosphoproteomics, proteomics, target discovery, normalization 등
 
 </div>
 
@@ -59,6 +129,7 @@ Network medicine 기반 암 환자 대상 약물 재배치
 
 - [[CADDIE]] · [[DrugCLIP]] · [[Disease Module Discovery|Disease Module]]
 - [[Systems Medicine]] · [[kersting-2025-nf-core-nextflow-disease-module|nf-core pipeline]]
+- [[network-medicine-drug-repurposing-cancer|Drug Repurposing Q&A]]
 
 </div>
 
@@ -76,15 +147,9 @@ Network medicine 기반 암 환자 대상 약물 재배치
 
 - [[hartung-2022-caddie-cancer-driver-drug-interaction|CADDIE]] · [[kersting-2025-nf-core-nextflow-disease-module|nf-core Disease Module]]
 
-**Immunotherapy**
-
-- [[savage-2026-t-cell-state-tf-cooperative|CAR-T TF Engineering]] · [[altenburger-2026-lymphoid-chemokine-cd8-t-cell|Chemokine T cell Priming]]
-
 **Multimodal & Platform**
 
-- [[zhang-2026-multi-embed-pathology-wsi-multimodal|Multi-Embed (WSI+omics)]] · [[wu-2026-reimagining-human-centric-drug-development|NAMs Review]]
-- [[cui-2026-haiku-spatial-biology-clinical-histology|Haiku]] · [[tran-2026-phoenix-virtual-spatial-transcriptomics|Phoenix]]
-- [[bilous-2026-xenium-split-spillover|Xenium/SPLIT QC]] · [[spatial-ai-for-cancer|Spatial AI map]]
+- [[zhang-2026-multi-embed-pathology-wsi-multimodal|Multi-Embed (WSI+omics)]] · [[cui-2026-haiku-spatial-biology-clinical-histology|Haiku]] · [[tran-2026-phoenix-virtual-spatial-transcriptomics|Phoenix]]
 
 </div>
 
@@ -93,47 +158,10 @@ Network medicine 기반 암 환자 대상 약물 재배치
 
 ### [[vital-digital-cell|VITAL Digital Cell]]
 
-Single-cell foundation model, perturbation prediction, spatial multiomics, validation workflow
+Single-cell foundation model, perturbation prediction, spatial multiomics
 
 - [[gandhi-2025-tahoe-x1-perturbation-trained-sc-fm|Tahoe-x1]] · [[wenkel-tu-2026-txpert-knowledge-graphs|TxPert]]
 - [[zhang-2026-igof-perturb-seq|iGOF-Perturb-seq]] · [[benjamin-zador-2026-tissueformer|TissueFormer]]
-- [[single-cell-foundation-models|scFM map]]
-
-</div>
-
-<div class="card">
-<span class="card-badge badge-cancer">타겟 발굴</span>
-
-### [[nrl-target-discovery|NRL Target Discovery]]
-
-Genetic evidence, transcriptomic reversal, target safety, binder QC, and degrader biology
-
-- [[tsepilov-2026-gentropy-pleiotropy-target-safety|Gentropy]] · [[xing-2026-gps-transcriptomic-reversal|GPS]]
-- [[piochi-2026-proteus-protein-flexibility|PROTEUS]] · [[chun-2026-antibody-cdr-fitness-mapping|CDR fitness]]
-- [[scharping-2026-t-cell-exhaustion-proteostasis|T cell proteostasis]]
-
-</div>
-
-<div class="card">
-<span class="card-badge">논문</span>
-
-### 소스 노트
-
-**annForce 관련**
-
-- [[scGen]] · [[CPA]] · [[CellOT]]
-- [[GEARS]] · [[CellRank]] · [[GPerturb]]
-- [[InterPLM]]
-
-**Notion review 추가**
-
-- [[cui-2026-haiku-spatial-biology-clinical-histology|Haiku]] · [[tran-2026-phoenix-virtual-spatial-transcriptomics|Phoenix]]
-- [[wenkel-tu-2026-txpert-knowledge-graphs|TxPert]] · [[gandhi-2025-tahoe-x1-perturbation-trained-sc-fm|Tahoe-x1]]
-
-**AdaLN / diffusion transformer**
-
-- [[ba-2016-layer-normalization|LayerNorm]] · [[kim-2017-dynamic-layer-normalization|Dynamic LayerNorm]] · [[perez-2018-film-conditioning-layer|FiLM]]
-- [[peebles-xie-2023-diffusion-transformers|DiT]] · [[chen-2023-pixart-alpha|PixArt-alpha]] · [[zhu-2025-unveiling-adaln-zero|AdaLN-Zero analysis]]
 
 </div>
 
@@ -143,22 +171,13 @@ Genetic evidence, transcriptomic reversal, target safety, binder QC, and degrade
 ### 주요 개념
 
 - [[perturbation-modeling|Perturbation modeling]]
-- [[single-cell-perturbation-prediction|Perturbation prediction]]
-- [[cell-state-dynamics-and-fate-mapping|Cell state dynamics & fate mapping]]
-- [[single-cell-methods|Single-cell methods]]
 - [[network-medicine|Network medicine]]
+- [[spatial-ai-for-cancer|Spatial AI for cancer]]
+- [[single-cell-foundation-models|Single-cell foundation models]]
 - [[virtual-screening|Virtual screening]]
 - [[protein-language-models|Protein language models]]
-- [[sparse-autoencoders|Sparse autoencoders]]
 - [[adaptive-layer-normalization-adaln|Adaptive Layer Normalization (AdaLN)]]
-- [[single-cell-foundation-models|Single-cell foundation models]]
-- [[spatial-ai-for-cancer|Spatial AI for cancer]]
-
-**AdaLN 주변 개념**
-
-- [[layer-normalization|LayerNorm]] · [[conditioning-mechanisms|Conditioning]] · [[feature-wise-modulation|Feature-wise modulation]]
-- [[diffusion-models|Diffusion models]] · [[diffusion-transformers|Diffusion transformers]] · [[timestep-embeddings|Timestep embeddings]]
-- [[transformer-blocks|Transformer blocks]] · [[cross-attention|Cross-attention]] · [[residual-connections|Residual connections]] · [[zero-initialization|Zero initialization]]
+- [[diffusion-models|Diffusion models]] · [[diffusion-transformers|Diffusion transformers]]
 
 </div>
 
