@@ -4,7 +4,7 @@ authors: "Junsong Chen, Jincheng Yu, Chongjian Ge, Lewei Yao, Enze Xie, Yue Wu, 
 year: 2023
 doi: "10.48550/arXiv.2310.00426"
 url: "https://arxiv.org/abs/2310.00426"
-category: "diffusion-transformer"
+category: "AI-modeling"
 source_collection: "web-review-2026-05-07"
 tags: [pixart-alpha, diffusion-transformer, adaln-single, text-to-image]
 ---

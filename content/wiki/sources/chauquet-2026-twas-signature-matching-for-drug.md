@@ -3,7 +3,7 @@ title: "TWAS signature-matching for drug prioritisation: best-practice benchmark
 authors: "Solal Chauquet, Jiayue-Clara Jiang, Lauren F. Barker, Zoe L. Hunter, Gagandeep Singh, Naomi R. Wray, Allan F. McRae, Sonia Shah"
 year: 2026
 doi: "10.64898/2026.04.22.26349470"
-category: "cancer"
+category: "cancer-biology"
 pdf_path: "/Users/heesun/Documents/Obsidian Vault/llm-wiki/papers/chauquet-2026-twas-signature-matching-for-drug.pdf"
 pdf_filename: "chauquet-2026-twas-signature-matching-for-drug.pdf"
 source_collection: "notion-handoff-2026-05"

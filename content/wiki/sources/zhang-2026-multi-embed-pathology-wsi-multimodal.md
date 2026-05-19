@@ -3,7 +3,7 @@ title: "Systematically decoding pathological morphologies and molecular profiles
 authors: "Zhang et al."
 year: 2026
 doi: "10.1038/s41592-026-03070-5"
-category: "cancer"
+category: "cancer-biology"
 pdf_path: "/Users/heesun/Documents/Obsidian Vault/llm-wiki/papers/zhang-2026-multi-embed-pathology-wsi-multimodal.pdf"
 pdf_filename: "zhang-2026-multi-embed-pathology-wsi-multimodal.pdf"
 source_collection: "notion-handoff-2026-05"

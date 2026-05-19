@@ -3,7 +3,7 @@ title: "Unveiling the Secret of AdaLN-Zero in Diffusion Transformer"
 authors: "Jie Zhu, Mingyu Ding, Boqiang Duan, Leye Wang, Jingdong Wang"
 year: 2025
 url: "https://openreview.net/forum?id=E4roJSM9RM"
-category: "diffusion-transformer"
+category: "AI-modeling"
 source_collection: "web-review-2026-05-07"
 tags: [adaln-zero, adaln-gaussian, diffusion-transformer, initialization]
 ---

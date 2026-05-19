@@ -3,7 +3,7 @@ title: "Non-invasive profiling of the tumour microenvironment with spatial ecoty
 authors: "Wubing Zhang, Erin L. Brown, Abul Usmani, et al."
 year: 2026
 doi: "10.1038/s41586-026-10452-4"
-category: "cancer"
+category: "cancer-biology"
 pdf_path: "/Users/heesun/Documents/Obsidian Vault/llm-wiki/papers/zhang-2026-non-invasive-profiling-of-the-tumour.pdf"
 pdf_filename: "zhang-2026-non-invasive-profiling-of-the-tumour.pdf"
 source_collection: "notion-handoff-2026-05"

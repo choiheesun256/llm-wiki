@@ -4,7 +4,7 @@ authors: "Manuel Tran, Rushin H. Gindra, et al."
 year: 2026
 doi: "10.64898/2026.04.25.720812"
 url: "https://github.com/peng-lab/phoenix"
-category: "spatial-ai"
+category: "AI-modeling"
 notion_source: "https://www.notion.so/358302d9c5988142ab4cf56f5b42da41"
 source_collection: "notion-review-2026-05-07"
 tags: [histology, virtual-spatial-transcriptomics, xenium, treatment-response, cancer]

@@ -3,7 +3,7 @@ title: "ProteinAligner: A Multi-Modal Contrastive Learning Framework for Protein
 authors: "Li Zhang, Han Guo, Leah Schaffer, Young Su Ko, Digvijay Singh, Hamid Rahmani, Danielle Grotjahn, Elizabeth Villa, Michael Gilson, Wei Wang, Trey Ideker, Eric Xing, Pengtao Xie"
 year: 2026
 doi: "10.1016/j.crmeth.2026.101407"
-category: "cancer"
+category: "cancer-biology"
 pdf_path: "/Users/heesun/Documents/Obsidian Vault/llm-wiki/papers/zhang-2026-proteinaligner-tri-modal-contrastive-learning.pdf"
 pdf_filename: "zhang-2026-proteinaligner-tri-modal-contrastive-learning.pdf"
 source_collection: "notion-handoff-2026-05"

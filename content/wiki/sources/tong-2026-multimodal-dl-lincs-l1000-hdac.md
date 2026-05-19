@@ -3,7 +3,7 @@ title: "Multimodal deep learning with LINCS L1000 identifies pan-cancer Class I 
 authors: "Siyuan Tong, Wen Zhang, Shiliang Ji"
 year: 2026
 doi: "10.64898/2026.04.22.720196"
-category: "cancer"
+category: "cancer-biology"
 pdf_path: "/Users/heesun/Documents/Obsidian Vault/llm-wiki/papers/tong-2026-multimodal-dl-lincs-l1000-hdac.pdf"
 pdf_filename: "tong-2026-multimodal-dl-lincs-l1000-hdac.pdf"
 source_collection: "notion-handoff-2026-05"

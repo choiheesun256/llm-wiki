@@ -3,7 +3,7 @@ title: "DrugCLIP: Contrastive Protein-Ligand Learning for Genome-Scale Virtual S
 authors: "Jia et al."
 year: 2026
 doi: "10.1126/science.ads9530"
-category: "cancer"
+category: "cancer-biology"
 pdf_path: "/Users/heesun/Documents/Obsidian Vault/llm-wiki/papers/jia-2026-drugclip-contrastive-learning-genome-scale.pdf"
 pdf_filename: "jia-2026-drugclip-contrastive-learning-genome-scale.pdf"
 source_collection: "notion-handoff-2026-05"

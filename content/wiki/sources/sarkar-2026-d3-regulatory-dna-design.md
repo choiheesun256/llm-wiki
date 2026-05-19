@@ -3,7 +3,7 @@ title: "D3: Discrete Diffusion for Tunable Regulatory DNA Design"
 authors: "Anirban Sarkar, Alejandra Duran, Yiyang Yu, Da-Wei Lin, Yijie Kang, Peter K. Koo, et al."
 year: 2026
 doi: "10.1101/2024.05.23.595630"
-category: "regulatory-ml"
+category: "AI-modeling"
 notion_source: "https://www.notion.so/354302d9c598813bb3a4e855c05c3d2f"
 source_collection: "notion-review-2026-05-07"
 tags: [dna-diffusion, regulatory-dna, enhancer-design, mpra, deep-learning]

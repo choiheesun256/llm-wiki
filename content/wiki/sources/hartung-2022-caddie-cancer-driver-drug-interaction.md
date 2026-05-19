@@ -3,7 +3,7 @@ title: "CADDIE: Cancer Driver Drug Interaction Explorer"
 authors: "Hartung et al."
 year: 2022
 doi: "10.1093/nar/gkac384"
-category: "cancer"
+category: "cancer-biology"
 pdf_path: "/Users/heesun/Documents/Obsidian Vault/llm-wiki/papers/hartung-2022-caddie-cancer-driver-drug-interaction.pdf"
 pdf_filename: "hartung-2022-caddie-cancer-driver-drug-interaction.pdf"
 source_collection: "notion-handoff-2026-05"

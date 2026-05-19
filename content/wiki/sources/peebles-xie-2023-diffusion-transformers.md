@@ -4,7 +4,7 @@ authors: "William Peebles, Saining Xie"
 year: 2023
 doi: "10.48550/arXiv.2212.09748"
 url: "https://arxiv.org/abs/2212.09748"
-category: "diffusion-transformer"
+category: "AI-modeling"
 source_collection: "web-review-2026-05-07"
 tags: [dit, diffusion-transformer, adaln-zero, generative-models]
 ---

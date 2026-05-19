@@ -3,7 +3,7 @@ title: "nf-core Nextflow disease module discovery pipeline"
 authors: "Kersting et al."
 year: 2025
 doi: "10.1101/2025.11.20.687681"
-category: "cancer"
+category: "cancer-biology"
 pdf_path: "/Users/heesun/Documents/Obsidian Vault/llm-wiki/papers/kersting-2025-nf-core-nextflow-disease-module.pdf"
 pdf_filename: "kersting-2025-nf-core-nextflow-disease-module.pdf"
 source_collection: "notion-handoff-2026-05"

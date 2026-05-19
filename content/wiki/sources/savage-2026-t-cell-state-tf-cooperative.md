@@ -3,7 +3,7 @@ title: "T cell state TF cooperative engineering: KLF2 x RUNX2 memory-like CAR-T 
 authors: "Savage et al."
 year: 2026
 doi: "10.64898/2026.04.20.718569"
-category: "cancer"
+category: "cancer-biology"
 pdf_path: "/Users/heesun/Documents/Obsidian Vault/llm-wiki/papers/savage-2026-t-cell-state-tf-cooperative.pdf"
 pdf_filename: "savage-2026-t-cell-state-tf-cooperative.pdf"
 source_collection: "notion-handoff-2026-05"

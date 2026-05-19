@@ -4,7 +4,7 @@ authors: "Yan Cui, Jacob S. Leiby, Wenhui Lei, Dokyoon Kim, Yanxiang Deng, Aaron
 year: 2026
 doi: "N/A"
 url: "https://arxiv.org/abs/2605.00925"
-category: "spatial-ai"
+category: "AI-modeling"
 notion_source: "https://www.notion.so/358302d9c598819a8588f7e675218346"
 source_collection: "notion-review-2026-05-07"
 tags: [histology, spatial-proteomics, clinical-text, contrastive-learning, cancer]

@@ -3,7 +3,7 @@ title: "Lymphoid chemokine limits CD8+ T cell priming time to preserve effector 
 authors: "Lukas M. Altenburger, Daniela Claudino Carvoeiro et al."
 year: 2026
 doi: "10.1126/science.adq2080"
-category: "cancer"
+category: "cancer-biology"
 pdf_path: "/Users/heesun/Documents/Obsidian Vault/llm-wiki/papers/altenburger-2026-lymphoid-chemokine-cd8-t-cell.pdf"
 pdf_filename: "altenburger-2026-lymphoid-chemokine-cd8-t-cell.pdf"
 source_collection: "notion-handoff-2026-05"

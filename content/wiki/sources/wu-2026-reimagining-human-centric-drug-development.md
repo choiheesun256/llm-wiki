@@ -3,7 +3,7 @@ title: "Reimagining human-centric drug development with New Approach Methodologi
 authors: "Xuekun Wu, Matthew A. Wu, James Zou, Nicole Kleinstreuer, Joseph C. Wu"
 year: 2026
 doi: "10.1126/science.aeb0045"
-category: "cancer"
+category: "cancer-biology"
 pdf_path: "/Users/heesun/Documents/Obsidian Vault/llm-wiki/papers/wu-2026-reimagining-human-centric-drug-development.pdf"
 pdf_filename: "wu-2026-reimagining-human-centric-drug-development.pdf"
 source_collection: "notion-handoff-2026-05"

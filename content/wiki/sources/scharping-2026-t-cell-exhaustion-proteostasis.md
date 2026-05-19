@@ -3,7 +3,7 @@ title: "T cell exhaustion proteostasis axis and E3 ligase rescue"
 authors: "Nicole E. Scharping, Xuezhen Ge, Maria Ines Matias, Fulin Jiang, et al."
 year: 2026
 doi: "10.1016/j.cell.2026.02.019"
-category: "cancer"
+category: "cancer-biology"
 notion_source: "https://www.notion.so/352302d9c59881e993a8cafe6cb17d89"
 source_collection: "notion-review-2026-05-07"
 tags: [t-cell-exhaustion, e3-ligase, proteostasis, immunotherapy, proteomics]
