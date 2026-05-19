@@ -8,8 +8,8 @@ title: Heesun LLM wiki
     <div class="stat-label">Papers</div>
   </div>
   <div class="stat">
-    <div class="stat-num">61</div>
-    <div class="stat-label">Concepts</div>
+    <div class="stat-num">25</div>
+    <div class="stat-label">Q&A</div>
   </div>
 </div>
 
