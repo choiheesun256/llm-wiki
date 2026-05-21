@@ -153,6 +153,14 @@ h1, h2, h3, h4, h5, h6 {
   font-variant-numeric: tabular-nums;
 }
 
+/* ── Graph view ── */
+.graph > .graph-outer {
+  height: 300px;
+  border: 1px solid var(--lightgray);
+  border-radius: 10px;
+  background: var(--light);
+}
+
 /* ── Responsive ── */
 @media (max-width: 680px) {
   .card-grid {
