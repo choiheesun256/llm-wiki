@@ -13,13 +13,7 @@ title: Heesun LLM wiki
   </div>
 </div>
 
-<a href="/LLM-wiki/wiki/cancer-study/" class="digest-link">
-  <div class="digest-banner">
-    <span class="digest-tag">DAILY DIGEST</span>
-    <strong>암 생물학 Daily Digest →</strong>
-    <span>8일 토픽별 가이드 · PARP · EGFR · KRAS · CPTAC · TME</span>
-  </div>
-</a>
+<a href="./wiki/cancer-study/" class="digest-pill">📖 암 생물학 Daily Digest →</a>
 
 <div class="card-grid">
 

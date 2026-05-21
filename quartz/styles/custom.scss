@@ -31,47 +31,23 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* ── Digest banner ── */
-.digest-link {
+/* ── Digest pill ── */
+.digest-pill {
+  display: inline-block;
   text-decoration: none !important;
-  display: block;
-  margin-bottom: 1.2rem;
-}
-
-.digest-banner {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  padding: 0.9rem 1.2rem;
-  border: 1px solid var(--secondary);
-  border-left: 4px solid var(--secondary);
-  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--secondary) !important;
   background: var(--highlight);
-  transition: background 0.15s ease, transform 0.15s ease;
-  flex-wrap: wrap;
+  border: 1px solid var(--secondary);
+  border-radius: 999px;
+  padding: 0.4rem 1.1rem;
+  margin-bottom: 1.2rem;
+  transition: background 0.15s ease, color 0.15s ease;
 
   &:hover {
-    transform: translateX(4px);
-  }
-
-  .digest-tag {
-    font-size: 0.6rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    color: var(--light);
     background: var(--secondary);
-    padding: 0.15rem 0.5rem;
-    border-radius: 3px;
-  }
-
-  strong {
-    font-size: 0.92rem;
-    color: var(--dark);
-  }
-
-  > span:last-child {
-    font-size: 0.78rem;
-    color: var(--gray);
+    color: var(--light) !important;
   }
 }
 
