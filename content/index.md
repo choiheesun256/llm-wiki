@@ -13,22 +13,22 @@ title: Heesun LLM wiki
   </div>
 </div>
 
+<a href="/LLM-wiki/wiki/cancer-study/" class="digest-link">
+  <div class="digest-banner">
+    <span class="digest-tag">DAILY DIGEST</span>
+    <strong>암 생물학 Daily Digest →</strong>
+    <span>8일 토픽별 가이드 · PARP · EGFR · KRAS · CPTAC · TME</span>
+  </div>
+</a>
+
 <div class="card-grid">
-
-<div class="card card-wide card-digest">
-
-### [암 생물학 Daily Digest](./wiki/cancer-study/)
-
-8일간의 토픽별 가이드 — PARP 내성, EGFR, KRAS, CDK, Phosphoproteomics, CPTAC, TME
-
-</div>
 
 <div class="card">
 
 ### 프로젝트
 
-- **[[annForce]]** — Perturbation force field 모델
-- **[[drug-repurposing|Drug Repurposing]]** — Network medicine 약물 재배치
+- **[[annForce]]** — Perturbation force field
+- **[[drug-repurposing|Drug Repurposing]]** — Network medicine
 - **[[vital-digital-cell|VITAL Digital Cell]]** — Single-cell FM
 - **[[nrl-target-discovery|NRL Target Discovery]]** — 표적 발굴
 
