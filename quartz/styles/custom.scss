@@ -151,6 +151,23 @@ h1, h2, h3, h4, h5, h6 {
   font-variant-numeric: tabular-nums;
 }
 
+/* ── Digest card ── */
+.card-digest {
+  background: var(--highlight);
+  border-color: var(--secondary);
+  text-align: center;
+
+  h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+  }
+
+  p {
+    font-size: 0.82rem;
+    color: var(--gray);
+  }
+}
+
 /* ── Responsive ── */
 @media (max-width: 680px) {
   .card-grid {

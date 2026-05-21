@@ -15,6 +15,14 @@ title: Heesun LLM wiki
 
 <div class="card-grid">
 
+<div class="card card-wide card-digest">
+
+### [[cancer-study/index|암 생물학 Daily Digest]]
+
+8일간의 토픽별 가이드 — PARP 내성, EGFR, KRAS, CDK, Phosphoproteomics, CPTAC, TME
+
+</div>
+
 <div class="card">
 
 ### 프로젝트
