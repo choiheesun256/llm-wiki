@@ -516,7 +516,7 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
 
           for (const label of labelsContainer.children) {
             if (!activeNodes.includes(label)) {
-              label.alpha = scaleOpacity
+              label.alpha = 0
             }
           }
         }),
