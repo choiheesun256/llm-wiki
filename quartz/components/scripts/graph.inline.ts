@@ -294,11 +294,21 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
             100,
           ),
         )
+      } else if (n.active) {
+        tweenGroup.add(
+          new Tweened<Text>(n.label).to(
+            {
+              alpha: 0.8,
+              scale: { x: defaultScale, y: defaultScale },
+            },
+            100,
+          ),
+        )
       } else {
         tweenGroup.add(
           new Tweened<Text>(n.label).to(
             {
-              alpha: n.label.alpha,
+              alpha: 0,
               scale: { x: defaultScale, y: defaultScale },
             },
             100,
