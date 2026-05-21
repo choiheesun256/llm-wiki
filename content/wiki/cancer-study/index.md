@@ -5,7 +5,7 @@ draft: false
 
 # 암 생물학 Daily Digest
 
-이 위키에 정리된 275편의 논문을 토픽별로 묶어, 암 생물학을 교과서처럼 체계적으로 학습할 수 있게 구성한 가이드입니다.
+이 위키에 정리된 275편의 논문을 토픽별로 묶어, 암 생물학을 체계적으로 학습할 수 있게 구성한 가이드입니다.
 
 ## 읽기 순서
 
@@ -30,7 +30,7 @@ draft: false
 | Day | 토픽 | 참고 논문 |
 |-----|------|-----------|
 | 7 | [[day-07-cptac-proteogenomics\|CPTAC Proteogenomics]] | 11 |
-| 13 | [[day-13-multi-omics-integration\|Multi-omics 통합]] | 11 |
+| 8 | [[day-08-multi-omics-integration\|Multi-omics 통합]] | 11 |
 
 ### Part 4: 공간 생물학과 단일세포
 
@@ -44,13 +44,13 @@ draft: false
 | Day | 토픽 | 참고 논문 |
 |-----|------|-----------|
 | 11 | [[day-11-immune-evasion\|면역 회피: 암이 면역계를 속이는 방법]] | 8 |
-| 8 | [[day-08-cancer-hallmarks-tme-computational\|Hallmarks, TME & 컴퓨팅 접근]] | 16 |
+| 12 | [[day-12-cancer-hallmarks-tme-computational\|Hallmarks, TME & 컴퓨팅 접근]] | 16 |
 
 ### Part 6: 도구와 방법론
 
 | Day | 토픽 | 참고 논문 |
 |-----|------|-----------|
-| 12 | [[day-12-ai-cancer-research\|AI가 바꾸는 암 연구]] | 12 |
+| 13 | [[day-13-ai-cancer-research\|AI가 바꾸는 암 연구]] | 12 |
 | 14 | [[day-14-bioinformatics-tools\|Bioinformatics 도구들]] | 10 |
 | 15 | [[day-15-target-discovery-drug-repurposing\|표적 발굴과 약물 재배치]] | 10 |
 

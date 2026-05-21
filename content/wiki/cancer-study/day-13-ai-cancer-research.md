@@ -1,5 +1,5 @@
 ---
-title: "Day 12: AI가 바꾸는 암 연구"
+title: "Day 13: AI가 바꾸는 암 연구"
 draft: false
 ---
 

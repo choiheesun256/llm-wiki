@@ -1,9 +1,9 @@
 ---
-title: "Day 8: Hallmarks, TME & 컴퓨팅 접근"
+title: "Day 12: Hallmarks, TME & 컴퓨팅 접근"
 draft: false
 ---
 
-# Day 8: Hallmarks, TME & 컴퓨팅 접근
+# Day 12: Hallmarks, TME & 컴퓨팅 접근
 
 ## 1. 암의 Hallmarks — 2022 업데이트와 새로운 차원들
 

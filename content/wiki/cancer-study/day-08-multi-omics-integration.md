@@ -1,5 +1,5 @@
 ---
-title: "Day 13: Multi-omics 통합 — 하나의 레이어로는 부족하다"
+title: "Day 8: Multi-omics 통합 — 하나의 레이어로는 부족하다"
 draft: false
 ---
 
